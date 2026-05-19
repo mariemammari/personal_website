@@ -1,0 +1,125 @@
+{
+  "language": {
+    "english": "English",
+    "french": "French",
+    "active": "Active"
+  },
+  "mode": {
+    "professional": "Professional",
+    "personal": "Personal"
+  },
+  "nav": {
+    "projects": "Projects",
+    "skills": "Skills",
+    "experience": "Experience",
+    "about": "About",
+    "contact": "Contact",
+    "blog": "Blog"
+  },
+  "hero": {
+    "headlinePrefix": "Hello, I'm",
+    "firstName": "Mariem",
+    "lastName": "Ammari",
+    "subtitles": [
+      "Engineering Student at ESPRIT",
+      "Full-Stack Web Developer",
+      "DevOps-minded · ML-curious",
+      "Building real products"
+    ],
+    "specialties": "Specialising in Web Technologies & Internet, with practical experience using DevOps tools and hands-on experience in machine learning workflows.",
+    "ctaPrimary": "See my CV",
+    "ctaSecondary": "Get in Touch",
+    "cvLabel": "CV",
+    "cvTitle": "Choose your CV language",
+    "cvSubtitle": "Pick English or French to open the file.",
+    "cvEnglish": "CV in English",
+    "cvFrench": "CV in French",
+    "cvClose": "Close",
+    "social": {
+      "github": "GitHub",
+      "linkedin": "LinkedIn",
+      "email": "Email"
+    }
+  },
+  "projects": {
+    "title": "Projects",
+    "heading": "Projects that show full-stack, microservices, and ML work.",
+    "subtitle": "Four focused builds with clear scope and stack.",
+    "liveDemo": "Demo video",
+    "status": {
+      "live": "DONE",
+      "wip": "[WIP]",
+      "experiment": "[EXPERIMENT]"
+    }
+  },
+  "skills": {
+    "title": "Skills",
+    "heading": "A focused stack for building and shipping.",
+    "subtitle": "Grouped by discipline and depth."
+  },
+  "experience": {
+    "title": "Experience",
+    "heading": "Work that shows how I deliver.",
+    "subtitle": "Internships and freelance work across full stack, UI/UX, and product delivery."
+  },
+  "about": {
+    "title": "About Me",
+    "heading": "Always learning, Forever growing.",
+    "professional": [
+      "Hi, I'm Mariem. I take crafting applications personally — quality and attention to detail are what make a project truly worth building.",
+      "I earned my bachelor's degree in Computer Science with honors from ISSAT Sousse, and I'm currently completing my engineering cycle at ESPRIT, specializing in Web Technologies & Internet.",
+      "Five years across frontend, backend, DevOps, design, and machine learning gave me something I value more than any single skill: the ability to see a product as a whole."
+    ],
+    "personal": [
+      "Hi, I'm Mariem. I take crafting applications personally — quality and attention to detail are what make a project truly worth building.",
+      "I earned my bachelor's degree in Computer Science with honors from ISSAT Sousse, and I'm currently completing my engineering cycle at ESPRIT, specializing in Web Technologies & Internet.",
+      "Five years across frontend, backend, DevOps, design, and machine learning gave me something I value more than any single skill: the ability to see a product as a whole."
+    ],
+    "stats": [
+      {
+        "value": "5+",
+        "label": "years of study"
+      },
+      {
+        "value": "3",
+        "label": "domains mastered (web · DevOps · design)"
+      },
+      {
+        "value": "2",
+        "label": "degrees (BSc + engineering in progress)"
+      },
+      {
+        "value": "Honors",
+        "label": "graduate"
+      }
+    ],
+    "facts": {
+      "based": "Based in Tunisia",
+      "languages": "Arabic · French · English",
+      "student": "ESPRIT engineering cycle · web technologies & internet",
+      "years": "ISSAT Sousse · BSc with honors"
+    }
+  },
+  "contact": {
+    "label": "Contact",
+    "professionalTitle": "Let's connect.",
+    "personalTitle": "Let's connect.",
+    "subtitle": "Open to all kinds of opportunities.",
+    "email": "Email",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "behance": "Behance"
+  },
+  "blog": {
+    "label": "Blog",
+    "title": "Notes, experiments, and learning updates.",
+    "description": "This space can hold personal essays, progress logs, or experiment write-ups when you want a more informal view of your work.",
+    "back": "Back to portfolio"
+  },
+  "footer": {
+    "text": "© 2026 Mariem Ammari · Built with React + Tailwind"
+  },
+  "fab": {
+    "hireMe": "Get in touch"
+  }
+}

@@ -1,0 +1,125 @@
+{
+  "language": {
+    "english": "Anglais",
+    "french": "Français",
+    "active": "Actif"
+  },
+  "mode": {
+    "professional": "Professionnel",
+    "personal": "Personnel"
+  },
+  "nav": {
+    "projects": "Projets",
+    "skills": "Compétences",
+    "experience": "Parcours",
+    "about": "À propos",
+    "contact": "Contact",
+    "blog": "Blog"
+  },
+  "hero": {
+    "headlinePrefix": "Bonjour, je suis",
+    "firstName": "Mariem",
+    "lastName": "Ammari",
+    "subtitles": [
+      "Étudiante ingénieure à l'ESPRIT",
+      "Développeuse Web Full-Stack",
+      "DevOps · ML · Web",
+      "Je construis des produits concrets"
+    ],
+    "specialties": "Spécialisée en Web Technologies & Internet, avec une expérience pratique des outils DevOps et une expérience concrète des workflows de machine learning.",
+    "ctaPrimary": "Voir mon CV",
+    "ctaSecondary": "Me contacter",
+    "cvLabel": "CV",
+    "cvTitle": "Choisir la langue du CV",
+    "cvSubtitle": "Anglais ou français pour ouvrir le fichier.",
+    "cvEnglish": "CV en anglais",
+    "cvFrench": "CV en français",
+    "cvClose": "Fermer",
+    "social": {
+      "github": "GitHub",
+      "linkedin": "LinkedIn",
+      "email": "Email"
+    }
+  },
+  "projects": {
+    "title": "Projets",
+    "heading": "Des projets de développement full-stack, microservices et ML.",
+    "subtitle": "Quatre projets avec un périmètre clair et une stack précise.",
+    "liveDemo": "Video de demo",
+    "status": {
+      "live": "TERMINÉ",
+      "wip": "[EN COURS]",
+      "experiment": "[EXPÉRIMENTAL]"
+    }
+  },
+  "skills": {
+    "title": "Compétences",
+    "heading": "Une stack ciblée pour construire et livrer.",
+    "subtitle": "Regroupée par discipline et profondeur."
+  },
+  "experience": {
+    "title": "Parcours",
+    "heading": "Des missions qui montrent comment je livre.",
+    "subtitle": "Stages et freelance entre full stack, UI/UX et livraison produit."
+  },
+  "about": {
+    "title": "À propos",
+    "heading": "Apprendre toujours, Grandir sans cesse.",
+    "professional": [
+      "Bonjour, je suis Mariem. Je prends la création d'applications au sérieux — la qualité et l'attention aux détails sont ce qui rend un projet vraiment digne d'être construit.",
+      "J'ai obtenu ma licence en informatique avec mention à l'ISSAT Sousse, et je poursuis actuellement mon cycle d'ingénieur à l'ESPRIT, spécialité Web Technologies & Internet.",
+      "Cinq ans passés entre frontend, backend, DevOps, design et machine learning m'ont apporté quelque chose que j'estime plus que n'importe quelle compétence individuelle : la capacité de voir un produit dans sa globalité."
+    ],
+    "personal": [
+      "Bonjour, je suis Mariem. Je prends la création d'applications au sérieux — la qualité et l'attention aux détails sont ce qui rend un projet vraiment digne d'être construit.",
+      "J'ai obtenu ma licence en informatique avec mention à l'ISSAT Sousse, et je poursuis actuellement mon cycle d'ingénieur à l'ESPRIT, spécialité Web Technologies & Internet.",
+      "Cinq ans passés entre frontend, backend, DevOps, design et machine learning m'ont apporté quelque chose que j'estime plus que n'importe quelle compétence individuelle : la capacité de voir un produit dans sa globalité."
+    ],
+    "stats": [
+      {
+        "value": "5+",
+        "label": "années d'études"
+      },
+      {
+        "value": "3",
+        "label": "domaines maîtrisés (web · DevOps · design)"
+      },
+      {
+        "value": "2",
+        "label": "diplômes (BSc + cycle ingénieur en cours)"
+      },
+      {
+        "value": "Mention",
+        "label": "diplômée avec mention"
+      }
+    ],
+    "facts": {
+      "based": "Basée en Tunisie",
+      "languages": "Arabe · Français · Anglais",
+      "student": "Cycle ingénieur ESPRIT · Web Technologies & Internet",
+      "years": "ISSAT Sousse · Licence avec mention"
+    }
+  },
+  "contact": {
+    "label": "Contact",
+    "professionalTitle": "Restons en contact.",
+    "personalTitle": "Restons en contact.",
+    "subtitle": "Ouverte a toutes sortes d'opportunites.",
+    "email": "Email",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "behance": "Behance"
+  },
+  "blog": {
+    "label": "Blog",
+    "title": "Notes, expérimentations et mises à jour d'apprentissage.",
+    "description": "Cet espace peut accueillir des textes personnels, des journaux de progression ou des retours d'expérience techniques.",
+    "back": "Retour au portfolio"
+  },
+  "footer": {
+    "text": "© 2026 Mariem Ammari · Construit avec React + Tailwind"
+  },
+  "fab": {
+    "hireMe": "Me contacter"
+  }
+}
