@@ -12,7 +12,7 @@ const baseBodyClasses = [
 ];
 
 document.documentElement.classList.add(...baseHtmlClasses);
-document.documentElement.style.colorScheme = "dark";
+document.documentElement.style.colorScheme = "light";
 document.body.classList.add(...baseBodyClasses);
 
 createRoot(document.getElementById("root")!).render(

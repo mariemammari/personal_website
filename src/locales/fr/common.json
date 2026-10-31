@@ -20,6 +20,16 @@
     "headlinePrefix": "Bonjour, je suis",
     "firstName": "Mariem",
     "lastName": "Ammari",
+    "roleLine": "Étudiante ingénieure à l'ESPRIT",
+    "roleSpecialties": "· Full-Stack · DevOps · ML",
+    "internship": "Étudiante en dernière année à la recherche d'un PFE",
+    "ctaViewCv": "Voir le CV",
+    "ctaContact": "Me contacter",
+    "cvDownloadHref": "/cv_new_fr.pdf",
+    "proof": {
+      "issat": "ISSAT Sousse · Informatique · Mention",
+      "esprit": "Cycle ingénieur ESPRIT · Web Technologies & Internet"
+    },
     "subtitles": [
       "Étudiante ingénieure à l'ESPRIT",
       "Développeuse Web Full-Stack",
@@ -29,6 +39,11 @@
     "specialties": "Spécialisée en Web Technologies & Internet, avec une expérience pratique des outils DevOps et une expérience concrète des workflows de machine learning.",
     "ctaPrimary": "Voir mon CV",
     "ctaSecondary": "Me contacter",
+    "chips": {
+      "fullstack": "Full-Stack",
+      "devops": "DevOps",
+      "ml": "ML"
+    },
     "cvLabel": "CV",
     "cvTitle": "Choisir la langue du CV",
     "cvSubtitle": "Anglais ou français pour ouvrir le fichier.",
@@ -44,8 +59,100 @@
   "projects": {
     "title": "Projets",
     "heading": "Des projets de développement full-stack, microservices et ML.",
-    "subtitle": "Quatre projets avec un périmètre clair et une stack précise.",
-    "liveDemo": "Video de demo",
+    "subtitle": "Une sélection de projets en développement full-stack, microservices et machine learning.",
+    "liveDemo": "Vidéo de démonstration",
+    "ui": {
+      "demo": "DÉMO",
+      "viewDetails": "VOIR LES DÉTAILS",
+      "viewDetailsFor": "Voir les détails de {{title}}",
+      "screenshotAlt": "capture d'écran {{number}}",
+      "projectPreview": "aperçu du projet",
+      "viewGitHub": "Voir sur GitHub",
+      "visitWebsite": "Visiter le site",
+      "projectDetails": "Détails du projet",
+      "myContribution": "Ma contribution",
+      "screenshots": "Captures d'écran",
+      "techStack": "Technologies utilisées",
+      "coreTechnologies": "Technologies principales",
+      "machineLearningData": "Machine learning et données",
+      "devopsInfrastructure": "DevOps et infrastructure",
+      "keyFeatures": "Fonctionnalités principales",
+      "pipelineDeployment": "Pipeline et processus de déploiement",
+      "infrastructureStack": "Stack d'infrastructure",
+      "containerization": "Conteneurisation",
+      "orchestration": "Orchestration",
+      "frontendHosting": "Hébergement du frontend",
+      "dnsTls": "DNS / TLS",
+      "ciCd": "CI/CD"
+    },
+    "items": {
+      "1": {
+        "tagline": "Plateforme immobilière full-stack avec IA et DevOps complet",
+        "description": "Une plateforme immobilière full-stack conçue avec React, NestJS et MongoDB, propulsée par 3 microservices d'IA (estimation des prix, recommandations et validation de documents par OCR), et déployée via une chaîne DevOps complète utilisant Jenkins, Kubernetes, Docker, Vercel et Cloudflare.",
+        "longDescription": "Smart Property est une plateforme immobilière full-stack conçue pour le marché tunisien. Le frontend SPA React + Vite est déployé en continu sur Vercel via un pipeline CI Jenkins qui exécute les tests Vitest, lance l'analyse statique SonarQube, construit l'application et déclenche automatiquement le déploiement en production sur Vercel. Le backend NestJS est conteneurisé avec Docker et déployé sur un cluster Kubernetes autogéré, initialisé avec kubeadm ; Cloudflare gère le DNS, la protection contre les attaques DDoS et la terminaison TLS. Un dépôt ML distinct contient trois microservices FastAPI entièrement conteneurisés : un estimateur de prix (XGBoost), un moteur de recommandations et un moteur de détection de fraude OCR, chacun déployé indépendamment sur Kubernetes. La plateforme propose des annonces immobilières, des parcours de location, une messagerie en temps réel avec Socket.io, des paiements Stripe, des notifications push via Firebase et un assistant IA pour la création de biens.",
+        "features": [
+          "Annonces immobilières et CRUD — gestion complète des biens, intégration des médias Cloudinary et recherches géographiques avancées",
+          "Parcours de location automatisés — génération immédiate des contrats de location et des échéanciers de paiement lors des changements de statut d'un bien",
+          "Paiements Stripe — dépôts automatisés, sessions de paiement sécurisées et génération de factures déclenchée par webhook",
+          "Chat WebSocket en temps réel — messagerie Socket.io avec suivi de présence et confirmations de lecture",
+          "Estimateur de prix IA — endpoint FastAPI qui estime en temps réel les prix du marché immobilier avec un modèle XGBoost personnalisé",
+          "Classification et description IA — génération de légendes avec BLIP et classification du standing avec CLIP à partir des images",
+          "Moteur de recommandations IA — correspondance hybride en temps réel combinant règles explicites et machine learning, avec zonage par gouvernorat",
+          "Détection de fraude par OCR — extraction et vérification automatisées de l'authenticité des contrats immobiliers avec Tesseract OCR",
+          "Recherche de proximité géographique — utilisation de l'API Overpass pour repérer les points d'intérêt et dédupliquer les résultats avec Levenshtein",
+          "Sécurité multi-rôles — authentification JWT avec OAuth 2.0 Google/Facebook et prise en charge des clés d'accès biométriques WebAuthn"
+        ],
+        "devops": "CI du frontend (Jenkins) : installation → couverture Vitest → SonarQube → build Vite → préparation de la sortie Vercel précompilée → déploiement en production sur Vercel avec nouvelle tentative en cas d'échec. CI du backend (Jenkins) : npm ci → tests Jest → SonarQube → Quality Gate → nest build → construction et publication de l'image DockerHub → déclenchement du pipeline CD. CD du backend (Jenkins) : kubectl apply des fichiers deployment.yaml et service.yaml → redémarrage du déploiement → vérification de son état. Infrastructure : Cloudflare (DNS, TLS et protection DDoS) → cluster Kubernetes kubeadm hébergeant le backend NestJS et les services FastAPI Python → CDN Vercel pour la SPA React, MongoDB Atlas et Cloudinary.",
+        "role": "J'ai dirigé l'architecture DevOps : conception et mise en œuvre des pipelines CI/CD Jenkins, des manifests Kubernetes (Deployments, Services, Secrets), de la configuration DNS Cloudflare et de la conteneurisation Docker du backend. J'ai développé des modules backend NestJS essentiels : biens, authentification, location, chat, finance, notifications, recherche de proximité et intégration de l'IA. J'ai également mis en place le chat Socket.io en temps réel, le paiement Stripe avec génération de factures PDF et le monitoring Prometheus + Grafana.",
+        "coverTitle": "Smart Property — Démo",
+        "coverSubtitle": "React · MongoDB · NestJS · Kubernetes · Jenkins · Vercel"
+      },
+      "2": {
+        "tagline": "Pipeline ML de bout en bout pour le marché immobilier tunisien",
+        "description": "Un pipeline de machine learning de bout en bout consacré au marché immobilier tunisien. Il couvre le scraping web, le nettoyage des données, l'ingénierie des caractéristiques, un modèle de mélange à deux étapes pour les prix de vente et un modèle XGBoost pour les loyers, exposés via une API REST FastAPI.",
+        "longDescription": "Ce projet est un pipeline complet de science des données pour prédire les prix immobiliers en Tunisie. Il commence par des scrapers personnalisés qui collectent des annonces sur des portails immobiliers tunisiens, puis nettoie et normalise les données pour tenir compte de la forte asymétrie du marché. L'ingénierie des caractéristiques comprend un atlas géographique des niveaux de prix, obtenu en regroupant des quartiers tunisiens en quatre catégories fondées sur les données. Pour les prix de vente, un modèle de mélange à deux étapes distingue les biens d'entrée de gamme des biens de luxe. Pour les loyers, un modèle XGBoost ajusté utilise plus de cinquante caractéristiques élaborées. Les deux modèles sont exposés par une API REST FastAPI et conteneurisés avec Docker pour être déployés comme microservice Kubernetes dans la plateforme Smart Property.",
+        "features": [
+          "Scraping web ciblé — crawlers Python automatisés qui extraient des annonces détaillées des principaux portails immobiliers tunisiens",
+          "Pipeline de nettoyage automatisé — traitement des valeurs aberrantes, normalisation du texte et imputation des données manquantes avec Pandas",
+          "Atlas géographique des prix — regroupement K-means des villes tunisiennes en zones de prix distinctes",
+          "Modèle de mélange à deux étapes — approche de machine learning qui distingue et prédit les prix des biens d'entrée de gamme et de luxe",
+          "Ingénierie des caractéristiques — caractéristiques personnalisées portant notamment sur la densité spatiale, les pièces, les étages et les équipements",
+          "API REST FastAPI — endpoints d'estimation des prix en temps réel intégrés à des microservices conteneurisés"
+        ],
+        "role": "J'ai développé l'ensemble du pipeline ML : scrapers web, notebook de nettoyage des données, ingénierie des caractéristiques, clustering géographique, sélection et ajustement des modèles (XGBoost, RandomForest, Ridge), conception du modèle de mélange à deux étapes pour les prix de vente, ainsi que l'API FastAPI et son Dockerfile."
+      },
+      "3": {
+        "tagline": "Plateforme intelligente de gestion de centre commercial — Symfony 6.4",
+        "description": "Une plateforme intelligente qui réunit clients, commerçants et administrateurs dans un même écosystème : commerce en ligne, gestion d'événements, programme de fidélité, stationnement avec QR codes, notifications en temps réel et chatbot assisté par l'IA Gemini.",
+        "longDescription": "InnoMall est une plateforme web multi-rôles qui numérise les opérations d'un centre commercial moderne. Développée avec Symfony 6.4 et Twig, elle s'adresse aux clients, qui consultent les produits, participent aux événements et gagnent des points de fidélité ; aux commerçants, qui gèrent leurs stocks, promotions et commandes ; et aux administrateurs, qui supervisent l'ensemble de l'écosystème. La plateforme intègre Stripe pour les paiements en ligne, Twilio pour les notifications SMS et l'API Gemini pour un assistant conversationnel dédié au centre commercial. Le module de stationnement affiche les places disponibles en temps réel et génère des tickets QR. Un fil social permet aux clients de publier, commenter et interagir, avec un système de points qui récompense leur participation. L'intégration au calendrier génère des liens d'événements compatibles iCal avec la bibliothèque Spatie.",
+        "features": [
+          "E-commerce multi-rôles — panier complet, paiement Stripe, suivi des commandes et tableaux de bord de stock pour les commerçants",
+          "Fil social — système de publications, commentaires et réponses imbriquées avec Symfony Doctrine ORM",
+          "Programme de fidélité — attribution automatique de points pour les achats et les interactions",
+          "Stationnement intelligent — suivi des places disponibles en temps réel, recherche de distributeurs et génération de tickets QR",
+          "Assistant IA Gemini — chatbot-guide du centre commercial pour l'orientation et la découverte de produits",
+          "Alertes SMS et Mercure — SMS transactionnels via Twilio et notifications en direct avec Symfony Mercure",
+          "Console d'administration — statistiques, rapports DOMPDF, suivi des réclamations et audit des commerçants"
+        ],
+        "role": "J'ai développé le module de fil social (entités Post, Commentaire et SousCommentaire, formulaires, contrôleurs et templates Twig). J'ai mis en place le programme de fidélité avec attribution automatique de points lors des interactions. J'ai également contribué au module de stationnement : gestion des places, génération de tickets QR et intégration du localisateur de distributeurs.",
+        "coverTitle": "InnoMall — Application web (Symfony 6.4)"
+      },
+      "4": {
+        "tagline": "Microservices Spring Boot avec Eureka, API Gateway et Docker",
+        "description": "Une plateforme de microservices Spring Boot comprenant la découverte de services Eureka, un Config Server centralisé, Spring Cloud API Gateway, l'authentification Keycloak et l'orchestration Docker Compose, consommée par un frontend Angular SPA.",
+        "longDescription": "DigiService est une architecture de microservices cloud-native construite avec Spring Boot et Spring Cloud. Eureka Server sert de registre où les microservices s'enregistrent automatiquement pour être découverts. Un Config Server centralisé gère leur configuration externe et évite les valeurs propres aux environnements codées en dur. Spring Cloud API Gateway constitue le point d'entrée unique et dirige les requêtes vers les microservices concernés. Chaque membre de l'équipe a développé et prend en charge un microservice dédié à un domaine métier : réservations, formations, gestion des artisans, évaluations et gestion des utilisateurs. L'ensemble est orchestré avec Docker Compose, utilise les contrôles de santé Spring Boot Actuator pour ordonner le démarrage des services et est sécurisé avec Keycloak SSO. Un frontend Angular SPA consomme les API via la passerelle.",
+        "features": [
+          "Découverte de services Eureka — serveur central où les microservices s'enregistrent au démarrage pour permettre le routage dynamique",
+          "Configuration centralisée avec Git — serveur de configuration unifié qui gère dynamiquement les propriétés selon les environnements",
+          "Spring Cloud API Gateway — point d'entrée unique qui gère le routage inter-origines et l'équilibrage des requêtes",
+          "Sécurité Keycloak SSO — authentification OAuth2/OIDC et identité centralisée pour protéger les endpoints REST",
+          "Microservices d'équipe — six microservices autonomes couvrant les évaluations, formations, réservations et annonces d'artisans",
+          "Orchestration Docker Compose — réseau isolé et dépendances de démarrage contrôlées par les vérifications de santé Actuator"
+        ],
+        "devops": "Docker Compose orchestre les services sur un réseau bridge dédié (digiservice-network). L'ordre de démarrage est contrôlé par les vérifications de santé : Eureka Server → Config Server → API Gateway → microservices → frontend Angular. Chaque service possède son Dockerfile. Les endpoints Spring Boot Actuator /actuator/health servent aux contrôles de santé Docker.",
+        "role": "J'ai développé le service Spring Boot microservice-maria, dédié à la gestion des biens et annonces. J'ai contribué à l'orchestration Docker Compose et à la configuration des contrôles de santé. J'ai configuré l'enregistrement du service dans Eureka, externalisé sa configuration via Config Server et intégré le service aux règles de routage de l'API Gateway."
+      }
+    },
     "status": {
       "live": "TERMINÉ",
       "wip": "[EN COURS]",
@@ -55,7 +162,45 @@
   "skills": {
     "title": "Compétences",
     "heading": "Une stack ciblée pour construire et livrer.",
-    "subtitle": "Regroupée par discipline et profondeur."
+    "subtitle": "Regroupée par discipline et profondeur.",
+    "categories": {
+      "frontend": {
+        "title": "Frontend",
+        "items": ["React", "Angular 17", "TypeScript", "TailwindCSS", "Bootstrap"]
+      },
+      "devops": {
+        "title": "DevOps & CI/CD",
+        "items": ["Docker", "Kubernetes", "Jenkins", "SonarQube"]
+      },
+      "backend": {
+        "title": "Backend & APIs",
+        "items": ["NestJS", "Node.js", "Spring Boot", "Django", "REST APIs", "Microservices"]
+      },
+      "databases": {
+        "title": "Bases de données",
+        "items": ["PostgreSQL", "MySQL", "MongoDB", "SQL Server"]
+      },
+      "dataMl": {
+        "title": "Data & ML",
+        "items": ["Python", "Scikit-learn", "XGBoost", "FastAPI", "Pandas"]
+      },
+      "languages": {
+        "title": "Langages",
+        "items": ["JavaScript", "Java", "Python", "C#", "Dart", "PHP"]
+      },
+      "priorFrameworks": {
+        "title": "Frameworks antérieurs",
+        "items": ["Laravel", "Symfony", "ASP.NET Core", "Flutter"]
+      },
+      "workflow": {
+        "title": "Workflow",
+        "items": ["Git", "GitHub", "Jira", "Confluence", "Scrum", "Kanban"]
+      },
+      "currentlyLearning": {
+        "title": "En cours d'apprentissage",
+        "items": ["AWS Cloud Foundations", "Prometheus", "Grafana", "Blockchain"]
+      }
+    }
   },
   "experience": {
     "title": "Parcours",
@@ -65,32 +210,41 @@
   "about": {
     "title": "À propos",
     "heading": "Apprendre toujours, Grandir sans cesse.",
+    "quoteStart": "La capacité à voir un ",
+    "quoteHighlight": "produit dans sa globalité",
+    "quoteEnd": ".",
+    "languagesTitle": "Langues",
+    "languages": {
+      "arabic": "Arabe",
+      "french": "Français",
+      "english": "Anglais"
+    },
+    "educationTitle": "Formation",
+    "now": "En cours",
     "professional": [
-      "Bonjour, je suis Mariem. Je prends la création d'applications au sérieux — la qualité et l'attention aux détails sont ce qui rend un projet vraiment digne d'être construit.",
-      "J'ai obtenu ma licence en informatique avec mention à l'ISSAT Sousse, et je poursuis actuellement mon cycle d'ingénieur à l'ESPRIT, spécialité Web Technologies & Internet.",
-      "Cinq ans passés entre frontend, backend, DevOps, design et machine learning m'ont apporté quelque chose que j'estime plus que n'importe quelle compétence individuelle : la capacité de voir un produit dans sa globalité."
+      "Bonjour, je suis Mariem. Je prends la conception d'applications à cœur : la qualité et le souci du détail font la valeur d'un projet.",
+      "J'ai obtenu ma licence en informatique avec mention à l'ISSAT Sousse, et je suis actuellement en dernière année du cycle ingénieur à l'ESPRIT, spécialisée en Technologies Web & Internet. Mon parcours couvre le développement full stack, les architectures microservices et le déploiement conteneurisé avec Docker et Kubernetes."
     ],
     "personal": [
-      "Bonjour, je suis Mariem. Je prends la création d'applications au sérieux — la qualité et l'attention aux détails sont ce qui rend un projet vraiment digne d'être construit.",
-      "J'ai obtenu ma licence en informatique avec mention à l'ISSAT Sousse, et je poursuis actuellement mon cycle d'ingénieur à l'ESPRIT, spécialité Web Technologies & Internet.",
-      "Cinq ans passés entre frontend, backend, DevOps, design et machine learning m'ont apporté quelque chose que j'estime plus que n'importe quelle compétence individuelle : la capacité de voir un produit dans sa globalité."
+      "Bonjour, je suis Mariem. Je prends la conception d'applications à cœur : la qualité et le souci du détail font la valeur d'un projet.",
+      "J'ai obtenu ma licence en informatique avec mention à l'ISSAT Sousse, et je suis actuellement en dernière année du cycle ingénieur à l'ESPRIT, spécialisée en Technologies Web & Internet. Mon parcours couvre le développement full stack, les architectures microservices et le déploiement conteneurisé avec Docker et Kubernetes."
     ],
     "stats": [
       {
-        "value": "5+",
-        "label": "années d'études"
+        "value": "Full Stack",
+        "label": "Angular, React, NestJS, Spring Boot, Django"
       },
       {
-        "value": "3",
-        "label": "domaines maîtrisés (web · DevOps · design)"
+        "value": "DevOps",
+        "label": "Docker, Kubernetes, Jenkins CI/CD, microservices"
       },
       {
-        "value": "2",
-        "label": "diplômes (BSc + cycle ingénieur en cours)"
+        "value": "ML appliqué",
+        "label": "Python, FastAPI, Scikit-learn, XGBoost"
       },
       {
         "value": "Mention",
-        "label": "diplômée avec mention"
+        "label": "Diplômée"
       }
     ],
     "facts": {
@@ -117,7 +271,7 @@
     "back": "Retour au portfolio"
   },
   "footer": {
-    "text": "© 2026 Mariem Ammari · Construit avec React + Tailwind"
+    "text": "© 2026 Mariem Ammari"
   },
   "fab": {
     "hireMe": "Me contacter"

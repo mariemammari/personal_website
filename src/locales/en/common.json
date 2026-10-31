@@ -20,6 +20,16 @@
     "headlinePrefix": "Hello, I'm",
     "firstName": "Mariem",
     "lastName": "Ammari",
+    "roleLine": "Engineering student at ESPRIT",
+    "roleSpecialties": "· Full-Stack · DevOps · ML",
+    "internship": "Final-year student seeking an end-of-studies internship.",
+    "ctaViewCv": "View CV",
+    "ctaContact": "Let's Contact",
+    "cvDownloadHref": "/cv_new_eng.pdf",
+    "proof": {
+      "issat": "ISSAT Sousse · Computer Science · Honors",
+      "esprit": "ESPRIT engineering cycle · web technologies & internet"
+    },
     "subtitles": [
       "Engineering Student at ESPRIT",
       "Full-Stack Web Developer",
@@ -29,6 +39,11 @@
     "specialties": "Specialising in Web Technologies & Internet, with practical experience using DevOps tools and hands-on experience in machine learning workflows.",
     "ctaPrimary": "See my CV",
     "ctaSecondary": "Get in Touch",
+    "chips": {
+      "fullstack": "Full-Stack",
+      "devops": "DevOps",
+      "ml": "ML"
+    },
     "cvLabel": "CV",
     "cvTitle": "Choose your CV language",
     "cvSubtitle": "Pick English or French to open the file.",
@@ -44,8 +59,32 @@
   "projects": {
     "title": "Projects",
     "heading": "Projects that show full-stack, microservices, and ML work.",
-    "subtitle": "Four focused builds with clear scope and stack.",
+    "subtitle": "Selected work across full-stack development, microservices, and machine learning.",
     "liveDemo": "Demo video",
+    "ui": {
+      "demo": "DEMO",
+      "viewDetails": "VIEW DETAILS",
+      "viewDetailsFor": "View details for {{title}}",
+      "screenshotAlt": "screenshot {{number}}",
+      "projectPreview": "project preview",
+      "viewGitHub": "View on GitHub",
+      "visitWebsite": "Visit Website",
+      "projectDetails": "Project Details",
+      "myContribution": "My Contribution",
+      "screenshots": "Screenshots",
+      "techStack": "Tech Stack",
+      "coreTechnologies": "Core Technologies",
+      "machineLearningData": "Machine Learning & Data",
+      "devopsInfrastructure": "DevOps & Infrastructure",
+      "keyFeatures": "Key Features",
+      "pipelineDeployment": "Pipeline & Deployment Flow",
+      "infrastructureStack": "Infrastructure Stack",
+      "containerization": "Containerization",
+      "orchestration": "Orchestration",
+      "frontendHosting": "Frontend Hosting",
+      "dnsTls": "DNS / TLS",
+      "ciCd": "CI/CD"
+    },
     "status": {
       "live": "DONE",
       "wip": "[WIP]",
@@ -55,7 +94,45 @@
   "skills": {
     "title": "Skills",
     "heading": "A focused stack for building and shipping.",
-    "subtitle": "Grouped by discipline and depth."
+    "subtitle": "Grouped by discipline and depth.",
+    "categories": {
+      "frontend": {
+        "title": "Frontend",
+        "items": ["React", "Angular 17", "TypeScript", "TailwindCSS", "Bootstrap"]
+      },
+      "devops": {
+        "title": "DevOps & CI/CD",
+        "items": ["Docker", "Kubernetes", "Jenkins", "SonarQube"]
+      },
+      "backend": {
+        "title": "Backend & APIs",
+        "items": ["NestJS", "Node.js", "Spring Boot", "Django", "REST APIs", "Microservices"]
+      },
+      "databases": {
+        "title": "Databases",
+        "items": ["PostgreSQL", "MySQL", "MongoDB", "SQL Server"]
+      },
+      "dataMl": {
+        "title": "Data & ML",
+        "items": ["Python", "Scikit-learn", "XGBoost", "FastAPI", "Pandas"]
+      },
+      "languages": {
+        "title": "Languages",
+        "items": ["JavaScript", "Java", "Python", "C#", "Dart", "PHP"]
+      },
+      "priorFrameworks": {
+        "title": "Prior Frameworks",
+        "items": ["Laravel", "Symfony", "ASP.NET Core", "Flutter"]
+      },
+      "workflow": {
+        "title": "Workflow",
+        "items": ["Git", "GitHub", "Jira", "Confluence", "Scrum", "Kanban"]
+      },
+      "currentlyLearning": {
+        "title": "Currently Learning",
+        "items": ["AWS Cloud Foundations", "Prometheus", "Grafana", "Blockchain"]
+      }
+    }
   },
   "experience": {
     "title": "Experience",
@@ -65,32 +142,41 @@
   "about": {
     "title": "About Me",
     "heading": "Always learning, Forever growing.",
+    "quoteStart": "The ability to see a ",
+    "quoteHighlight": "product as a whole",
+    "quoteEnd": ".",
+    "languagesTitle": "Languages",
+    "languages": {
+      "arabic": "Arabic",
+      "french": "French",
+      "english": "English"
+    },
+    "educationTitle": "Education",
+    "now": "Now",
     "professional": [
       "Hi, I'm Mariem. I take crafting applications personally — quality and attention to detail are what make a project truly worth building.",
-      "I earned my bachelor's degree in Computer Science with honors from ISSAT Sousse, and I'm currently completing my engineering cycle at ESPRIT, specializing in Web Technologies & Internet.",
-      "Five years across frontend, backend, DevOps, design, and machine learning gave me something I value more than any single skill: the ability to see a product as a whole."
+      "I earned my bachelor's degree in Computer Science with honors from ISSAT Sousse, and I'm now in the final year of my engineering cycle at ESPRIT, specializing in Web Technologies & Internet. My experience spans full-stack development, microservices, and containerized deployments with Docker and Kubernetes."
     ],
     "personal": [
       "Hi, I'm Mariem. I take crafting applications personally — quality and attention to detail are what make a project truly worth building.",
-      "I earned my bachelor's degree in Computer Science with honors from ISSAT Sousse, and I'm currently completing my engineering cycle at ESPRIT, specializing in Web Technologies & Internet.",
-      "Five years across frontend, backend, DevOps, design, and machine learning gave me something I value more than any single skill: the ability to see a product as a whole."
+      "I earned my bachelor's degree in Computer Science with honors from ISSAT Sousse, and I'm now in the final year of my engineering cycle at ESPRIT, specializing in Web Technologies & Internet. My experience spans full-stack development, microservices, and containerized deployments with Docker and Kubernetes."
     ],
     "stats": [
       {
-        "value": "5+",
-        "label": "years of study"
+        "value": "Full-Stack",
+        "label": "Angular, React, NestJS, Spring Boot, Django"
       },
       {
-        "value": "3",
-        "label": "domains mastered (web · DevOps · design)"
+        "value": "DevOps",
+        "label": "Docker, Kubernetes, Jenkins CI/CD, microservices"
       },
       {
-        "value": "2",
-        "label": "degrees (BSc + engineering in progress)"
+        "value": "Applied ML",
+        "label": "Python, FastAPI, Scikit-learn, XGBoost"
       },
       {
         "value": "Honors",
-        "label": "graduate"
+        "label": "Graduate"
       }
     ],
     "facts": {
@@ -117,7 +203,7 @@
     "back": "Back to portfolio"
   },
   "footer": {
-    "text": "© 2026 Mariem Ammari · Built with React + Tailwind"
+    "text": "© 2026 Mariem Ammari"
   },
   "fab": {
     "hireMe": "Get in touch"

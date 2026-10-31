@@ -12,18 +12,14 @@ import { SectionReveal } from "../components/ui/SectionReveal";
 
 export function Home() {
     return (
-        <div className="min-h-screen">
+        <div className="min-h-screen px-10">
             <Navbar />
             <motion.main
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.35 }}
             >
-                <Hero
-                    onContactClick={() =>
-                        document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })
-                    }
-                />
+                <Hero />
                 <SectionReveal>
                     <About />
                 </SectionReveal>

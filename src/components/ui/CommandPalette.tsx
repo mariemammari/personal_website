@@ -97,7 +97,7 @@ export function CommandPalette({ open, onClose }: CommandPaletteProps) {
             icon: FileText,
             group: "Actions",
             keywords: "cv resume english pdf",
-            action: () => { window.open("/cv-en.pdf", "_blank"); onClose(); },
+            action: () => { window.open("/cv_new_eng.pdf", "_blank"); onClose(); },
         },
         {
             id: "open-cv-fr",
@@ -106,7 +106,7 @@ export function CommandPalette({ open, onClose }: CommandPaletteProps) {
             icon: FileText,
             group: "Actions",
             keywords: "cv resume french pdf",
-            action: () => { window.open("/cv-fr.pdf", "_blank"); onClose(); },
+            action: () => { window.open("/cv_new_fr.pdf", "_blank"); onClose(); },
         },
         {
             id: "open-github",
@@ -236,7 +236,7 @@ export function CommandPalette({ open, onClose }: CommandPaletteProps) {
                         exit={{ opacity: 0, scale: 0.97, y: -8 }}
                         transition={{ duration: 0.18, ease: "easeOut" }}
                         onClick={(e) => e.stopPropagation()}
-                        className="w-full max-w-xl overflow-hidden rounded-[20px] border border-border bg-surface/95 shadow-2xl shadow-black/70 backdrop-blur-xl"
+                        className="glass w-full max-w-xl overflow-hidden rounded-3xl"
                     >
                         {/* Search bar */}
                         <div className="flex items-center gap-3 border-b border-border px-4 py-3.5">
@@ -249,11 +249,11 @@ export function CommandPalette({ open, onClose }: CommandPaletteProps) {
                                 placeholder="Search commands…"
                                 value={query}
                                 onChange={(e) => setQuery(e.target.value)}
-                                className="flex-1 bg-transparent text-sm text-white placeholder-muted/60 outline-none"
+                                className="flex-1 bg-transparent text-sm text-ink placeholder-muted/60 outline-none"
                             />
                             <button
                                 onClick={onClose}
-                                className="flex h-6 w-6 items-center justify-center rounded-md border border-border text-muted transition hover:border-primary/50 hover:text-white"
+                                className="flex h-6 w-6 items-center justify-center rounded-md border border-border text-muted transition hover:border-primary/50 hover:text-primary"
                             >
                                 <X className="h-3.5 w-3.5" />
                             </button>
@@ -280,11 +280,11 @@ export function CommandPalette({ open, onClose }: CommandPaletteProps) {
                                                     onMouseEnter={() => setActiveIndex(idx)}
                                                     onClick={cmd.action}
                                                     className={`flex w-full items-center gap-3 px-4 py-2.5 text-left transition-colors ${isActive
-                                                            ? "bg-primary/10 text-white"
-                                                            : "text-white/70 hover:bg-white/5"
+                                                            ? "bg-primary/10 text-ink"
+                                                            : "text-ink/70 hover:bg-primary/5"
                                                         }`}
                                                 >
-                                                    <div className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-lg border ${isActive ? "border-primary/40 bg-primary/15" : "border-border bg-white/5"}`}>
+                                                    <div className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-lg border ${isActive ? "border-primary/40 bg-primary/15" : "border-border bg-primary/5"}`}>
                                                         <cmd.icon className={`h-3.5 w-3.5 ${isActive ? "text-primary" : "text-muted"}`} />
                                                     </div>
                                                     <div className="min-w-0 flex-1">
@@ -294,7 +294,7 @@ export function CommandPalette({ open, onClose }: CommandPaletteProps) {
                                                         )}
                                                     </div>
                                                     {isActive && (
-                                                        <kbd className="shrink-0 rounded border border-border bg-white/5 px-1.5 py-0.5 text-[10px] text-muted">
+                                                        <kbd className="shrink-0 rounded border border-border bg-primary/5 px-1.5 py-0.5 text-[10px] text-muted">
                                                             ↵
                                                         </kbd>
                                                     )}
@@ -308,9 +308,9 @@ export function CommandPalette({ open, onClose }: CommandPaletteProps) {
 
                         {/* Footer hint */}
                         <div className="flex items-center gap-4 border-t border-border px-4 py-2.5 text-[10px] text-muted">
-                            <span><kbd className="rounded border border-border bg-white/5 px-1 py-0.5">↑↓</kbd> navigate</span>
-                            <span><kbd className="rounded border border-border bg-white/5 px-1 py-0.5">↵</kbd> select</span>
-                            <span><kbd className="rounded border border-border bg-white/5 px-1 py-0.5">Esc</kbd> close</span>
+                            <span><kbd className="rounded border border-border bg-primary/5 px-1 py-0.5">↑↓</kbd> navigate</span>
+                            <span><kbd className="rounded border border-border bg-primary/5 px-1 py-0.5">↵</kbd> select</span>
+                            <span><kbd className="rounded border border-border bg-primary/5 px-1 py-0.5">Esc</kbd> close</span>
                         </div>
                     </motion.div>
                 </motion.div>

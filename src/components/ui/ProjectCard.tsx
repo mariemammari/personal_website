@@ -4,6 +4,7 @@ import { FaGithub } from "react-icons/fa6";
 import { useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import type { Project } from "../../data/projects";
+import { heroGlassButtonCompact, heroGlassCard } from "./glassStyles";
 
 function StatusBadge({ status }: { status: Project["status"] }) {
     const { t } = useTranslation();
@@ -15,7 +16,7 @@ function StatusBadge({ status }: { status: Project["status"] }) {
     } as const;
 
     return (
-        <span className="rounded-full border border-border bg-white/5 px-3 py-1 text-[11px] font-medium tracking-[0.2em] text-secondary">
+        <span className="rounded-full border border-cyan-100/25 bg-cyan-100/10 px-3 py-1 font-mono text-[11px] font-medium tracking-[0.2em] text-cyan-100 backdrop-blur-xl">
             {labels[status]}
         </span>
     );
@@ -88,16 +89,16 @@ export function ProjectCard({ project, index, onOpen }: { project: Project; inde
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55, delay: index * 0.08 }}
             viewport={{ once: true, amount: 0.2 }}
-            className={`group overflow-y-auto overflow-x-hidden max-h-[700px] flex flex-col rounded-[28px] border border-border bg-surface/90 p-6 md:p-8 shadow-2xl shadow-black/20 transition duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_0_30px_rgba(168,85,247,0.22)] ${canOpen ? "cursor-pointer" : ""
-                } scrollbar-thin scrollbar-thumb-primary/50 scrollbar-track-transparent`}
+            className={`${heroGlassCard} group flex flex-col overflow-hidden p-6 md:p-8 ${canOpen ? "cursor-pointer" : ""
+                }`}
             onClick={handleOpen}
             onKeyDown={handleKeyDown}
             tabIndex={canOpen ? 0 : -1}
             role={canOpen ? "button" : undefined}
-            aria-label={canOpen ? `View details for ${project.title}` : undefined}
+            aria-label={canOpen ? t("projects.ui.viewDetailsFor", { title: project.title }) : undefined}
         >
             <div
-                className="relative mb-6 h-64 md:h-[340px] shrink-0 overflow-hidden rounded-2xl border border-border"
+                className="relative mb-6 h-64 shrink-0 overflow-hidden rounded-2xl border border-white/20 md:h-[340px]"
                 onPointerDown={handlePointerDown}
                 onPointerUp={handlePointerUp}
                 onPointerCancel={handlePointerLeave}
@@ -110,23 +111,23 @@ export function ProjectCard({ project, index, onOpen }: { project: Project; inde
                 <div className="pointer-events-none absolute inset-0 bg-linear-to-b from-black/10 via-black/40 to-black/70" />
                 {canOpen ? (
                     <div className="pointer-events-none absolute inset-0 flex items-center justify-center opacity-0 transition duration-300 group-hover:opacity-100">
-                        <span className="rounded-full border border-white/20 bg-black/40 px-4 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-white">
-                            View details
+                        <span className="rounded-full border border-white/30 bg-white/20 px-4 py-2 font-mono text-xs font-semibold uppercase tracking-[0.2em] text-white shadow-lg backdrop-blur-xl">
+                            {t("projects.ui.viewDetails")}
                         </span>
                     </div>
                 ) : null}
                 {project.coverTitle ? (
                     <div className="pointer-events-none absolute inset-x-4 bottom-4">
-                        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/70">Demo</p>
+                        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/80">{t("projects.ui.demo")}</p>
                         <p className="mt-1 text-sm font-semibold text-white">{project.coverTitle}</p>
                         {project.coverSubtitle ? (
-                            <p className="mt-1 text-xs text-white/70">{project.coverSubtitle}</p>
+                            <p className="mt-1 text-xs text-white/80">{project.coverSubtitle}</p>
                         ) : null}
                     </div>
                 ) : null}
             </div>
             {hasMultiple ? (
-                <div className="mb-4 flex gap-2 overflow-x-auto pb-1">
+                <div className="mb-4 flex flex-wrap gap-2">
                     {gallery.map((src, idx) => (
                         <button
                             key={`${project.title}-gallery-${idx}`}
@@ -135,7 +136,7 @@ export function ProjectCard({ project, index, onOpen }: { project: Project; inde
                                 event.stopPropagation();
                                 setActiveIndex(idx);
                             }}
-                            className={`h-12 w-16 shrink-0 overflow-hidden rounded-lg border bg-surface/80 transition ${idx === activeIndex ? "border-primary" : "border-border"
+                            className={`h-12 w-16 shrink-0 overflow-hidden rounded-lg border backdrop-blur-lg transition ${idx === activeIndex ? "border-cyan-100/80 ring-2 ring-cyan-100/20" : "border-white/20"
                                 }`}
                             aria-label={`${project.title} screenshot ${idx + 1}`}
                         >
@@ -151,17 +152,17 @@ export function ProjectCard({ project, index, onOpen }: { project: Project; inde
             ) : null}
             <div className="mb-3 flex items-start justify-between gap-3">
                 <div className="min-w-0">
-                    <h3 className="text-xl font-semibold text-white">{project.title}</h3>
+                    <h3 className="font-display text-2xl font-semibold text-white">{project.title}</h3>
                     {project.tagline && (
-                        <p className="mt-0.5 text-xs text-white/70 line-clamp-1">{project.tagline}</p>
+                        <p className="mt-1 line-clamp-1 text-sm text-white/70">{project.tagline}</p>
                     )}
                 </div>
                 <StatusBadge status={project.status} />
             </div>
-            <p className="text-sm leading-6 text-white/70">{project.description}</p>
+            <p className="text-sm leading-6 text-white/80">{project.description}</p>
             <div className="mt-4 flex flex-wrap gap-2">
                 {project.tags.map((tag) => (
-                    <span key={tag} className="rounded-full border border-primary/30 bg-primary-dim px-3 py-1 text-xs text-white">
+                    <span key={tag} className="rounded-full border border-cyan-100/20 bg-cyan-100/10 px-3 py-1 font-mono text-xs text-cyan-50">
                         {tag}
                     </span>
                 ))}
@@ -169,13 +170,13 @@ export function ProjectCard({ project, index, onOpen }: { project: Project; inde
             {project.year ? (
                 <div className="mt-4 flex items-center gap-3">
                     {project.year && (
-                        <span className="text-[11px] text-white/70 border border-border rounded-full px-2 py-0.5">{project.year}</span>
+                        <span className="rounded-full border border-white/20 bg-white/5 px-3 py-1 text-xs text-white/70">{project.year}</span>
                     )}
                 </div>
             ) : null}
             <div className="mt-4 flex items-center gap-4 text-sm font-medium">
                 <a
-                    className="inline-flex items-center gap-1 text-white transition hover:text-primary"
+                    className={heroGlassButtonCompact}
                     href={project.github}
                     target="_blank"
                     rel="noreferrer"
@@ -187,7 +188,7 @@ export function ProjectCard({ project, index, onOpen }: { project: Project; inde
                 </a>
                 {project.demo ? (
                     <a
-                        className="inline-flex items-center gap-1 text-secondary transition hover:text-white"
+                        className={`${heroGlassButtonCompact} border-cyan-100/35 bg-cyan-100/10 text-cyan-50 hover:bg-cyan-100/20`}
                         href={project.demo}
                         target="_blank"
                         rel="noreferrer"

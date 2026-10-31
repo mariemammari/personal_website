@@ -3,6 +3,7 @@ import { ArrowUpRight, CheckCircle2, GitBranch, Terminal, X } from "lucide-react
 import { useEffect, useState, type CSSProperties } from "react";
 import { useTranslation } from "react-i18next";
 import type { Project } from "../../data/projects";
+import { heroGlassButtonCompact, heroGlassCard, heroGlassPanel } from "./glassStyles";
 
 function StatusBadge({ status }: { status: Project["status"] }) {
     const { t } = useTranslation();
@@ -66,7 +67,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
         <AnimatePresence>
             {project ? (
                 <motion.div
-                    className="fixed inset-0 z-60 flex items-center justify-center bg-black/75 px-4 py-6 backdrop-blur-sm"
+                    className="fixed inset-0 z-60 flex items-center justify-center bg-black/60 px-4 py-6 backdrop-blur-sm"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
@@ -78,24 +79,24 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
                         exit={{ opacity: 0, scale: 0.97, y: 10 }}
                         transition={{ duration: 0.22, ease: "easeOut" }}
                         onClick={(e) => e.stopPropagation()}
-                        className="flex w-full max-w-5xl flex-col overflow-hidden rounded-[28px] border border-border bg-surface/95 shadow-2xl shadow-black/60 backdrop-blur max-h-[90vh]"
+                        className={`${heroGlassPanel} flex max-h-[90vh] w-full max-w-5xl flex-col overflow-hidden`}
                     >
                         {/* ── Header ── */}
-                        <div className="flex shrink-0 items-start justify-between border-b border-border px-6 py-5">
+                        <div className="flex shrink-0 items-start justify-between border-b border-white/15 px-6 py-5">
                             <div className="flex-1 min-w-0">
                                 <div className="flex items-center gap-3 flex-wrap">
                                     <p className="text-xs font-semibold uppercase tracking-[0.35em] text-secondary">
                                         Project
                                     </p>
                                     {project.year && (
-                                        <span className="text-xs text-muted border border-border rounded-full px-2 py-0.5">
+                                        <span className="rounded-full border border-white/20 bg-white/5 px-3 py-1 font-mono text-xs text-white/70">
                                             {project.year}
                                         </span>
                                     )}
                                 </div>
                                 <h3 className="mt-2 text-2xl font-semibold text-white">{project.title}</h3>
                                 {project.tagline && (
-                                    <p className="mt-1 text-sm text-muted">{project.tagline}</p>
+                                    <p className="mt-1 text-sm text-white/70">{project.tagline}</p>
                                 )}
                             </div>
                             <div className="flex items-center gap-3 ml-4 shrink-0">
@@ -103,7 +104,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
                                 <button
                                     type="button"
                                     onClick={onClose}
-                                    className="flex h-9 w-9 items-center justify-center rounded-full border border-border text-muted transition hover:border-primary/50 hover:text-white"
+                                    className="flex h-9 w-9 items-center justify-center rounded-full border border-white/20 text-white/70 transition hover:border-cyan-100/50 hover:text-white"
                                     aria-label="Close project details"
                                 >
                                     <X className="h-4 w-4" />
@@ -113,15 +114,15 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
 
                         {/* ── Tabs ── */}
                         {tabs.length > 1 && (
-                            <div className="flex shrink-0 gap-1 border-b border-border px-6 pt-3 pb-0">
+                            <div className="flex shrink-0 gap-1 border-b border-white/15 px-6 pt-3 pb-0">
                                 {tabs.map((tab) => (
                                     <button
                                         key={tab.key}
                                         type="button"
                                         onClick={() => setActiveTab(tab.key)}
                                         className={`pb-3 px-3 text-sm font-medium border-b-2 transition-colors ${activeTab === tab.key
-                                                ? "border-primary text-white"
-                                                : "border-transparent text-muted hover:text-white"
+                                                ? "border-cyan-100 text-white"
+                                                : "border-transparent text-white/60 hover:text-white"
                                             }`}
                                     >
                                         {tab.label}
@@ -143,7 +144,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
                                                 <img
                                                     src={gallery[activeIndex]}
                                                     alt={`${project.title} screenshot ${activeIndex + 1}`}
-                                                    className="h-56 w-full rounded-2xl border border-border object-cover"
+                                                    className="h-56 w-full rounded-2xl border border-white/20 object-cover"
                                                 />
                                                 {hasMultiple && (
                                                     <div className="flex gap-2 overflow-x-auto pb-1">
@@ -153,8 +154,8 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
                                                                 type="button"
                                                                 onClick={() => setActiveIndex(idx)}
                                                                 className={`h-14 w-20 shrink-0 overflow-hidden rounded-lg border transition ${idx === activeIndex
-                                                                        ? "border-primary"
-                                                                        : "border-border"
+                                                                        ? "border-cyan-100 ring-2 ring-cyan-100/20"
+                                                                        : "border-white/20"
                                                                     }`}
                                                                 aria-label={`${project.title} screenshot ${idx + 1}`}
                                                             >
@@ -171,7 +172,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
                                             </div>
                                         ) : (
                                             <div
-                                                className="h-56 w-full rounded-2xl border border-border bg-cover bg-center"
+                                                className="h-56 w-full rounded-2xl border border-white/20 bg-cover bg-center"
                                                 style={heroStyle}
                                             />
                                         )}
@@ -179,7 +180,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
 
                                     {/* Right — description, tags, links */}
                                     <div className="space-y-5">
-                                        <p className="text-sm leading-7 text-muted">
+                                        <p className="text-sm leading-7 text-white/80">
                                             {project.longDescription ?? project.description}
                                         </p>
 
@@ -188,7 +189,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
                                             {project.tags.map((tag) => (
                                                 <span
                                                     key={tag}
-                                                    className="rounded-full border border-primary/30 bg-primary-dim px-3 py-1 text-xs text-white"
+                                                    className="rounded-full border border-cyan-100/20 bg-cyan-100/10 px-3 py-1 font-mono text-xs text-cyan-50"
                                                 >
                                                     {tag}
                                                 </span>
@@ -197,18 +198,18 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
 
                                         {/* My role */}
                                         {project.role && (
-                                            <div className="rounded-xl border border-border bg-white/5 p-4">
+                                            <div className={`${heroGlassCard} p-4`}>
                                                 <p className="mb-1.5 text-xs font-semibold uppercase tracking-widest text-secondary">
                                                     My Contribution
                                                 </p>
-                                                <p className="text-xs leading-6 text-muted">{project.role}</p>
+                                                <p className="text-xs leading-6 text-white/75">{project.role}</p>
                                             </div>
                                         )}
 
                                         {/* Links */}
                                         <div className="flex flex-wrap gap-3 pt-1">
                                             <a
-                                                className="inline-flex items-center gap-2 rounded-full border border-border bg-white/5 px-4 py-2 text-sm font-semibold text-white transition hover:border-primary"
+                                                className={heroGlassButtonCompact}
                                                 href={project.github}
                                                 target="_blank"
                                                 rel="noreferrer"
@@ -218,7 +219,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
                                             </a>
                                             {project.demo && (
                                                 <a
-                                                    className="inline-flex items-center gap-2 rounded-full border border-secondary bg-secondary-dim px-4 py-2 text-sm font-semibold text-white transition hover:bg-secondary hover:text-background"
+                                                    className={`${heroGlassButtonCompact} border-cyan-100/35 bg-cyan-100/10 text-cyan-50 hover:bg-cyan-100/20`}
                                                     href={project.demo}
                                                     target="_blank"
                                                     rel="noreferrer"
@@ -239,10 +240,10 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
                                         {project.features.map((feature, idx) => (
                                             <div
                                                 key={idx}
-                                                className="flex items-start gap-3 rounded-xl border border-border bg-white/5 p-4"
+                                                className={`${heroGlassCard} flex items-start gap-3 p-4`}
                                             >
-                                                <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-                                                <p className="text-sm leading-6 text-muted">{feature}</p>
+                                                <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-cyan-100" />
+                                                <p className="text-sm leading-6 text-white/80">{feature}</p>
                                             </div>
                                         ))}
                                     </div>
@@ -253,21 +254,21 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
                             {activeTab === "devops" && project.devops && (
                                 <div className="px-6 py-6 space-y-4">
                                     <div className="flex items-center gap-2 mb-4">
-                                        <GitBranch className="h-4 w-4 text-primary" />
+                                        <GitBranch className="h-4 w-4 text-cyan-100" />
                                         <h4 className="text-sm font-semibold uppercase tracking-widest text-white">
                                             DevOps & Infrastructure
                                         </h4>
                                     </div>
 
                                     {/* Pipeline steps rendered from devops string */}
-                                    <div className="rounded-xl border border-border bg-black/40 p-5">
+                                    <div className={`${heroGlassCard} p-5`}>
                                         <div className="flex items-center gap-2 mb-3">
-                                            <Terminal className="h-3.5 w-3.5 text-secondary" />
-                                            <span className="text-xs font-semibold uppercase tracking-wider text-secondary">
+                                            <Terminal className="h-3.5 w-3.5 text-cyan-100" />
+                                            <span className="text-xs font-semibold uppercase tracking-wider text-cyan-100">
                                                 Pipeline & Infrastructure
                                             </span>
                                         </div>
-                                        <p className="text-sm leading-7 text-muted whitespace-pre-line">
+                                        <p className="whitespace-pre-line text-sm leading-7 text-white/80">
                                             {project.devops}
                                         </p>
                                     </div>
@@ -285,7 +286,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
                                             .map((tag) => (
                                                 <span
                                                     key={tag}
-                                                    className="rounded-full border border-secondary/30 bg-secondary/10 px-3 py-1 text-xs text-secondary"
+                                                    className="rounded-full border border-secondary/30 bg-secondary/10 px-3 py-1 font-mono text-xs text-secondary"
                                                 >
                                                     {tag}
                                                 </span>

@@ -97,7 +97,7 @@ export function EmailModal({ open, onClose, email }: EmailModalProps) {
         <AnimatePresence>
             {open ? (
                 <motion.div
-                    className="fixed inset-0 z-60 flex items-center justify-center bg-black/70 px-4 backdrop-blur-sm"
+                    className="fixed inset-0 z-60 flex items-center justify-center bg-black/60 px-4 backdrop-blur-sm"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
@@ -109,54 +109,54 @@ export function EmailModal({ open, onClose, email }: EmailModalProps) {
                         exit={{ opacity: 0, scale: 0.96, y: 8 }}
                         transition={{ duration: 0.22, ease: "easeOut" }}
                         onClick={(event) => event.stopPropagation()}
-                        className="w-full max-w-2xl rounded-[28px] border border-border bg-surface/95 p-7 shadow-2xl shadow-black/60 backdrop-blur"
+                        className="glass w-full max-w-2xl rounded-3xl p-7"
                     >
                         <p className="text-xs font-semibold tracking-[0.35em] text-secondary">GET IN TOUCH</p>
-                        <h3 className="mt-3 text-2xl font-semibold text-white">Get in Touch</h3>
+                        <h3 className="mt-3 text-2xl font-semibold text-ink">Get in Touch</h3>
 
                         <form onSubmit={handleSubmit} className="mt-6 grid gap-5">
                             <div className="grid gap-4 md:grid-cols-2">
-                                <label className="grid gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/70">
+                                <label className="grid gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-ink/70">
                                     Name
                                     <input
                                         type="text"
                                         placeholder="Your name"
                                         value={name}
                                         onChange={(event) => setName(event.target.value)}
-                                        className="h-12 rounded-xl border border-border bg-surface/80 px-4 text-sm text-white placeholder-muted/70 outline-none transition focus:border-primary/60"
+                                        className="h-12 rounded-xl border border-border bg-primary/5 px-4 text-sm text-ink placeholder-muted/70 outline-none transition focus:border-primary/60"
                                     />
                                 </label>
-                                <label className="grid gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/70">
+                                <label className="grid gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-ink/70">
                                     Email Address
                                     <input
                                         type="email"
                                         placeholder="you@example.com"
                                         value={fromEmail}
                                         onChange={(event) => setFromEmail(event.target.value)}
-                                        className="h-12 rounded-xl border border-border bg-surface/80 px-4 text-sm text-white placeholder-muted/70 outline-none transition focus:border-primary/60"
+                                        className="h-12 rounded-xl border border-border bg-primary/5 px-4 text-sm text-ink placeholder-muted/70 outline-none transition focus:border-primary/60"
                                     />
                                 </label>
                             </div>
 
-                            <label className="grid gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/70">
+                            <label className="grid gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-ink/70">
                                 Content
                                 <textarea
                                     placeholder="Your message"
                                     value={message}
                                     onChange={(event) => setMessage(event.target.value)}
-                                    className="min-h-[140px] rounded-xl border border-border bg-surface/80 px-4 py-3 text-sm text-white placeholder-muted/70 outline-none transition focus:border-primary/60"
+                                    className="min-h-[140px] rounded-xl border border-border bg-primary/5 px-4 py-3 text-sm text-ink placeholder-muted/70 outline-none transition focus:border-primary/60"
                                 />
                             </label>
 
                             <button
                                 type="submit"
-                                className="inline-flex items-center justify-center gap-2 rounded-xl border border-border bg-white/5 px-6 py-3 text-sm font-semibold text-white transition hover:border-primary/40 hover:bg-white/8"
+                                className="glass inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3 text-sm font-semibold text-ink transition hover:border-primary/40"
                             >
                                 Send Email →
                             </button>
                         </form>
 
-                        <div className="mt-6 flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-border bg-surface/80 px-4 py-3 text-sm text-white/80">
+                        <div className="glass mt-6 flex flex-wrap items-center justify-between gap-3 rounded-3xl px-4 py-3 text-sm text-ink/70">
                             <div className="flex items-center gap-2">
                                 <Mail className="h-4 w-4 text-secondary" />
                                 <span>Email: {email}</span>
@@ -164,7 +164,7 @@ export function EmailModal({ open, onClose, email }: EmailModalProps) {
                             <button
                                 type="button"
                                 onClick={handleCopy}
-                                className="inline-flex items-center gap-2 rounded-lg border border-border bg-white/5 px-3 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-white transition hover:border-primary/40"
+                                className="glass inline-flex items-center gap-2 rounded-lg px-3 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-ink transition hover:border-primary/40"
                             >
                                 <Copy className="h-3.5 w-3.5" /> {copied ? "Copied" : "Copy"}
                             </button>
@@ -173,7 +173,7 @@ export function EmailModal({ open, onClose, email }: EmailModalProps) {
                         <button
                             type="button"
                             onClick={onClose}
-                            className="mt-5 text-xs uppercase tracking-[0.3em] text-muted transition hover:text-white"
+                            className="mt-5 text-xs uppercase tracking-[0.3em] text-muted transition hover:text-primary"
                         >
                             Close
                         </button>

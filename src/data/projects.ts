@@ -2,6 +2,7 @@ import priceEstimator from "../assets/price_estimator.jpg";
 import digiServiceOne from "../assets/dijiservice/1.JPG";
 import digiServiceTwo from "../assets/dijiservice/2.JPG";
 import digiServiceThree from "../assets/dijiservice/3.JPG";
+import versLeVert from "../assets/VersLeVert.png";
 
 export type ProjectStatus = "live" | "wip" | "experiment";
 
@@ -26,15 +27,47 @@ export type Project = {
     status: ProjectStatus;
 };
 
+export const projectCardOrder = [5, 1, 4, 2, 3] as const;
+
 export const projects: Project[] = [
+    {
+        id: 5,
+        title: "Vers le Vert",
+        tagline: "Plateforme web responsive qui transforme les gestes écologiques du quotidien en défis, points et récompenses, avec vérification automatique des preuves par OCR.",
+        description:
+            "Vers le Vert est une plateforme web de suivi d'empreinte carbone personnelle avec défis communautaires (GreenTech). L'utilisateur relève des défis personnels, prouve ses gestes responsables en téléversant une photo ou en prenant une image avec sa caméra (facture d'électricité, ticket de transport, étiquette de vêtement) analysée par OCR, fait collecter ses déchets organiques et plastiques par des collecteurs partenaires, participe à des événements écologiques (ex. nettoyage de plage) et gagne des points échangeables contre des offres de sponsors (réductions, coupons).",
+        longDescription:
+            "Vers le Vert est une plateforme web de suivi d'empreinte carbone personnelle avec défis communautaires (GreenTech). L'utilisateur relève des défis personnels, prouve ses gestes responsables en téléversant une photo ou en prenant une image avec sa caméra (facture d'électricité, ticket de transport, étiquette de vêtement) analysée par OCR, fait collecter ses déchets organiques et plastiques par des collecteurs partenaires, participe à des événements écologiques (ex. nettoyage de plage) et gagne des points échangeables contre des offres de sponsors (réductions, coupons).",
+        tags: [
+            "Django",
+            "PostgreSQL",
+            "Nginx",
+            "Tailwind CSS",
+            "Git",
+            "Gemini",
+            "OCR.space",
+        ],
+        features: [
+            "Gestion des utilisateurs",
+            "Défis personnels",
+            "Points, gamification, sponsors et récompenses",
+            "Déchets organiques et plastiques",
+            "Événements écologiques",
+            "Lieux et recommandations éco-responsables",
+        ],
+        github: "https://github.com/mariemammari/VersLeVert",
+        demo: "https://verslevert.onrender.com",
+        image: `url(${versLeVert})`,
+        status: "live",
+    },
     {
         id: 1,
         title: "Smart Property",
         tagline: "Full-Stack Real Estate Platform with AI & Full DevOps",
         description:
-            "A production-grade real estate platform built with the MERN stack, powered by 4 AI microservices (price estimation, description generation, recommendations, and OCR document validation), and deployed on a full DevOps pipeline using Jenkins, Kubernetes, Docker, Vercel, and Cloudflare.",
+            "A full-stack real estate platform built with React, NestJS and MongoDB, powered by 3 AI microservices (price estimation, recommendations, and OCR document validation), and deployed on a full DevOps pipeline using Jenkins, Kubernetes, Docker, Vercel, and Cloudflare.",
         longDescription:
-            "Smart Property is a comprehensive real estate web platform designed for the Tunisian market. The React + Vite SPA frontend is deployed continuously via Vercel using a Jenkins CI pipeline that runs Vitest tests, performs SonarQube static analysis, builds the app, and triggers a Vercel production deployment automatically. The NestJS backend is containerized with Docker and deployed on a self-managed Kubernetes cluster bootstrapped with kubeadm, with Cloudflare handling DNS, DDoS protection, and TLS termination. A separate ML monorepo contains four fully Dockerized FastAPI microservices — a price estimator (XGBoost), a description generator (BLIP + CLIP), a recommendation engine, and an OCR Fraud Detection engine — each deployed as an independent Kubernetes Deployment. The platform supports property listings, rental workflows, real-time chat via Socket.io, Stripe payments, push notifications via Firebase, and an AI-powered property creation wizard.",
+            "Smart Property is a full-stack real estate web platform designed for the Tunisian market. The React + Vite SPA frontend is deployed continuously via Vercel using a Jenkins CI pipeline that runs Vitest tests, performs SonarQube static analysis, builds the app, and triggers a Vercel production deployment automatically. The NestJS backend is containerized with Docker and deployed on a self-managed Kubernetes cluster bootstrapped with kubeadm, with Cloudflare handling DNS, DDoS protection, and TLS termination. A separate ML monorepo contains three fully Dockerized FastAPI microservices — a price estimator (XGBoost), a recommendation engine, and an OCR Fraud Detection engine — each deployed as an independent Kubernetes Deployment. The platform supports property listings, rental workflows, real-time chat via Socket.io, Stripe payments, push notifications via Firebase, and an AI-powered property creation wizard.",
         tags: [
             "NestJS", "React", "MongoDB", "TypeScript",
             "Docker", "Kubernetes", "Jenkins", "Vercel",
@@ -58,12 +91,12 @@ export const projects: Project[] = [
         role:
             "Led DevOps architecture — designed and implemented both Jenkins CI & CD pipelines, Kubernetes manifests (Deployments, Services, Secrets), Cloudflare DNS configuration, and Docker containerization for the backend. Built core NestJS backend modules: property, auth, rental, chat, finance, notifications, nearby search, and AI integration layer. Implemented real-time Socket.io chat, Stripe payment flow with PDF invoice generation, and Prometheus + Grafana monitoring.",
         team: 5,
-        year: "2026",
+        year: "2025–2026",
         github: "https://github.com/mariemammari",
         demo: "https://www.youtube.com/watch?v=z0v_b0Qgeng",
         image: "url(https://img.youtube.com/vi/z0v_b0Qgeng/hqdefault.jpg)",
         coverTitle: "Smart Property — Demo",
-        coverSubtitle: "MERN · NestJS · Kubernetes · Jenkins · Vercel",
+        coverSubtitle: "React · MongoDB · NestJS · Kubernetes · Jenkins · Vercel",
         status: "live",
     },
     {
@@ -90,7 +123,7 @@ export const projects: Project[] = [
         role:
             "Built the full ML pipeline end-to-end: web scrapers, data cleaning notebook, feature engineering, geographic tier clustering, model selection & hyperparameter tuning (XGBoost, RandomForest, Ridge), Two-Stage Mixture Model design for sale prices, and FastAPI wrapper + Dockerfile.",
         team: 1,
-        year: "2026",
+        year: "2025–2026",
         github: "https://github.com/mariemammari",
         image: `url(${priceEstimator})`,
         status: "live",

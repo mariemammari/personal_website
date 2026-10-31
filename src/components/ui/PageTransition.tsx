@@ -7,7 +7,7 @@ export function PageTransition() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.18 }}
-            className="fixed inset-0 z-[100] overflow-hidden bg-background/95 backdrop-blur-[1px]"
+            className="fixed inset-0 z-[100] overflow-hidden bg-transparent backdrop-blur-[1px]"
         >
             <motion.div
                 className="absolute -left-32 top-1/2 h-[42rem] w-[42rem] -translate-y-1/2 rounded-full bg-primary/20 blur-3xl"
@@ -29,7 +29,6 @@ export function PageTransition() {
                 animate={{ y: [0, -24, 0] }}
                 transition={{ duration: 2.2, repeat: 1, ease: "easeInOut" }}
             />
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(14,10,24,0.12),rgba(7,6,13,0.88)_65%)]" />
         </motion.div>
     );
 }

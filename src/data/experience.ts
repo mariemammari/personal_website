@@ -10,6 +10,23 @@ export type ExperienceItem = {
 
 export const experience: ExperienceItem[] = [
     {
+        id: 4,
+        type: "work",
+        title: "Full Stack Developer Intern",
+        organization: "Drivago (iXnihilo S.A.)",
+        date: "JUN 2026 – PRESENT",
+        bullets: [
+            "Project: Contributing to the development and maintenance of Auto École Plus, a B2B SaaS platform for driving schools, alongside Drivago, a B2C driving-learning platform.",
+            "Responsibilities: Full-stack development, bug fixing, maintenance, code refactoring, feature implementation, code reviews, and collaboration with the development team.",
+            "Workflow: Agile Scrum with Jira for task management and sprint tracking; Git for version control, branch management, and collaboration.",
+            "Key contribution: Developed and enhanced calendar management features.",
+            "Key contribution: Contributed to an AI-powered scheduling system for driving school operations.",
+            "Key contribution: Extended examination fee management to handle absence penalties.",
+            "Key contribution: Contributed to a geospatial script that assigns Drivago pickup points using isochrone calculations.",
+        ],
+        tags: ["Angular", "Node.js", "PostgreSQL", "FastAPI", "Knex.js", "REST APIs", "JWT", "Jira", "Scrum", "Git"],
+    },
+    {
         id: 1,
         type: "work",
         title: "Full Stack Developer Intern",

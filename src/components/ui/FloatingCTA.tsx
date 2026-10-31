@@ -6,8 +6,8 @@ import { useTranslation } from "react-i18next";
 export function FloatingCTA() {
   const { t } = useTranslation();
   const contactHighlightClasses = [
-    "shadow-[0_0_0_1px_rgba(168,85,247,0.6),_0_0_48px_rgba(168,85,247,0.22)]",
-    "border-[rgba(168,85,247,0.65)]",
+    "shadow-[0_20px_50px_rgba(79,70,229,0.18)]",
+    "border-[rgba(79,70,229,0.65)]",
     "-translate-y-0.5",
   ];
   const [delayElapsed, setDelayElapsed] = useState(false);
@@ -88,13 +88,13 @@ export function FloatingCTA() {
             whileTap={{ scale: 0.96 }}
             animate={{
               boxShadow: [
-                "0 0 18px rgba(168, 85, 247, 0.45)",
-                "0 0 30px rgba(168, 85, 247, 0.68)",
-                "0 0 18px rgba(168, 85, 247, 0.45)",
+                "0 20px 50px rgba(79, 70, 229, 0.18)",
+                "0 20px 50px rgba(79, 70, 229, 0.28)",
+                "0 20px 50px rgba(79, 70, 229, 0.18)",
               ],
             }}
             transition={{ duration: 2.8, ease: "easeInOut", repeat: Infinity }}
-            className={`inline-flex items-center rounded-full bg-primary text-white shadow-[0_0_20px_rgba(168,85,247,0.48)] transition-shadow duration-300 hover:shadow-[0_0_35px_rgba(168,85,247,0.75)] ${isDesktop && hovered ? "gap-2 px-5 py-3" : "gap-0 px-3.5 py-3"
+            className={`inline-flex items-center rounded-full bg-primary text-[#fff] shadow-[0_20px_50px_rgba(79,70,229,0.18)] transition-shadow duration-300 hover:shadow-[0_20px_50px_rgba(79,70,229,0.28)] ${isDesktop && hovered ? "gap-2 px-5 py-3" : "gap-0 px-3.5 py-3"
               }`}
           >
             <Mail className="h-5 w-5" />

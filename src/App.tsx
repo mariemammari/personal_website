@@ -3,9 +3,9 @@ import { lazy, Suspense, useEffect, useState } from "react";
 import { BrowserRouter, Navigate, Route, Routes, useLocation, useParams } from "react-router-dom";
 import { LoadingOverlay } from "./components/ui/LoadingOverlay";
 import { PageTransition } from "./components/ui/PageTransition";
-import { BackgroundLayers } from "./components/ui/BackgroundLayers";
 import { CommandPalette } from "./components/ui/CommandPalette";
 import { EmailModal } from "./components/ui/EmailModal";
+import { GlassBlobs } from "./components/ui/GlassBlobs";
 import { CONTACT_EMAIL } from "./data/contact";
 import { EMAIL_MODAL_EVENT } from "./utils/emailModal";
 import i18n from "./i18n";
@@ -70,9 +70,9 @@ function AnimatedRoutes() {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.24, ease: "easeOut" }}
-          className="relative min-h-screen overflow-hidden isolate bg-background text-white font-mono"
+          className="relative min-h-screen overflow-hidden isolate text-ink"
         >
-          <BackgroundLayers />
+          <GlassBlobs />
           <AnimatePresence>
             {isTransitioning ? <PageTransition /> : null}
           </AnimatePresence>

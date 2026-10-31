@@ -39,21 +39,21 @@ export function LanguageToggle() {
             <button
                 type="button"
                 onClick={() => setOpen((value) => !value)}
-                className="inline-flex items-center gap-2 rounded-full border border-secondary bg-surface/80 px-4 py-2 text-sm text-white shadow-lg shadow-black/20 transition hover:border-secondary/80"
+                className="glass inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm text-ink transition hover:border-secondary/80"
             >
-                <Globe className="h-4 w-4 text-secondary" />
+                <Globe className="h-4 w-4 text-primary hover:text-secondary " />
                 <span>{lang.toUpperCase()}</span>
                 <ChevronDown className={`h-4 w-4 transition ${open ? "rotate-180" : ""}`} />
             </button>
 
             {open ? (
-                <div className="absolute right-0 top-14 w-40 overflow-hidden rounded-2xl border border-border bg-surface/95 p-1 shadow-2xl shadow-black/40 backdrop-blur">
+                <div className="glass absolute right-0 top-14 w-40 overflow-hidden rounded-2xl p-1">
                     {languages.map((item) => (
                         <button
                             key={item.value}
                             type="button"
                             onClick={() => switchLanguage(item.value)}
-                            className={`flex w-full items-center justify-between rounded-xl px-3 py-2 text-left text-sm transition hover:bg-white/5 ${lang === item.value ? "text-secondary" : "text-muted"
+                            className={`flex w-full items-center justify-between rounded-xl px-3 py-2 text-left text-sm transition hover:bg-primary/5 ${lang === item.value ? "text-primary" : "text-white"
                                 }`}
                         >
                             {item.label}
