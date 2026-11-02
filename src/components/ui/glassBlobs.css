@@ -7,6 +7,15 @@
   isolation: isolate;
 }
 
+.glass-blobs::after {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: rgb(0 0 0 / 0.65);
+  content: "";
+  pointer-events: none;
+}
+
 .gradient-blob,
 .glass-blob {
   position: absolute;
