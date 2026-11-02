@@ -44,7 +44,7 @@ export function About() {
     });
 
     return (
-        <section id="about" className="relative mx-auto w-11/12 max-w-[1600px] py-20 md:py-28 xl:w-10/12">
+        <section id="about" className="relative mx-auto w-11/12 max-w-[1600px] py-16 md:py-20 xl:w-10/12">
             <p className="font-mono text-sm font-bold uppercase tracking-[0.25em] text-secondary">
                 {t("about.title")}
             </p>
@@ -55,7 +55,7 @@ export function About() {
             <div className="mt-8 grid grid-cols-1 gap-5 lg:grid-cols-12">
                 <motion.article
                     {...reveal(0)}
-                    className="glass relative overflow-hidden rounded-3xl p-6 sm:p-8 lg:col-span-7"
+                    className="glass relative overflow-hidden rounded-3xl p-5 sm:p-6 lg:col-span-7"
                 >
                     <div
                         aria-hidden="true"
@@ -79,7 +79,7 @@ export function About() {
                 <div className="grid gap-5 sm:grid-cols-2 lg:col-span-5 lg:grid-cols-1">
                     <motion.article
                         {...reveal(1)}
-                        className="glass relative flex min-h-36 items-center gap-4 overflow-hidden rounded-3xl p-6"
+                        className="glass relative flex min-h-36 items-center gap-4 overflow-hidden rounded-3xl p-5"
                     >
                         <div
                             aria-hidden="true"
@@ -95,7 +95,7 @@ export function About() {
 
                     <motion.article
                         {...reveal(2)}
-                        className="glass flex min-h-36 flex-col justify-center rounded-3xl p-6"
+                        className="glass flex min-h-36 flex-col justify-center rounded-3xl p-5"
                     >
                         <h3 className="mb-4 font-mono text-xs font-semibold uppercase tracking-[0.2em] text-white">
                             {t("about.languagesTitle")}
@@ -115,12 +115,12 @@ export function About() {
 
                 <motion.div
                     {...reveal(3)}
-                    className="glass grid grid-cols-2 overflow-hidden rounded-3xl p-3 sm:p-5 lg:col-span-12 lg:grid-cols-4"
+                    className="glass grid grid-cols-2 overflow-hidden rounded-3xl p-2 sm:p-4 lg:col-span-12 lg:grid-cols-4"
                 >
                     {stats.map((stat, index) => (
                         <div
                             key={stat.label}
-                            className={`relative flex min-h-28 flex-col justify-center gap-1 px-4 py-4 text-center sm:px-6 ${
+                            className={`relative flex min-h-28 flex-col justify-center gap-1 px-3 py-3 text-center sm:px-4 ${
                                 index % 2 === 1 ? "border-s border-white/15" : ""
                             } ${
                                 index > 1 ? "border-t border-white/15 lg:border-t-0" : ""
@@ -138,7 +138,7 @@ export function About() {
 
                 <motion.article
                     {...reveal(4)}
-                    className="glass rounded-3xl p-6 sm:p-8 lg:col-span-12"
+                    className="glass rounded-3xl p-5 sm:p-6 lg:col-span-12"
                 >
                     <h3 className="mb-7 font-mono text-xs font-semibold uppercase tracking-[0.2em] text-white">
                         {t("about.educationTitle")}

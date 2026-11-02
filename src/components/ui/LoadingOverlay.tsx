@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 export function LoadingOverlay() {
     return (
-        <div className="fixed inset-0 z-[110] flex items-center justify-center overflow-hidden bg-transparent text-ink">
+        <div className="fixed inset-0 z-[110] flex items-center justify-center overflow-hidden bg-black/40 text-white">
             <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}

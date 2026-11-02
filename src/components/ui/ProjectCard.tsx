@@ -89,7 +89,7 @@ export function ProjectCard({ project, index, onOpen }: { project: Project; inde
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55, delay: index * 0.08 }}
             viewport={{ once: true, amount: 0.2 }}
-            className={`${heroGlassCard} group flex flex-col overflow-hidden p-6 md:p-8 ${canOpen ? "cursor-pointer" : ""
+            className={`${heroGlassCard} group flex flex-col overflow-hidden p-5 md:p-6 ${canOpen ? "cursor-pointer" : ""
                 }`}
             onClick={handleOpen}
             onKeyDown={handleKeyDown}

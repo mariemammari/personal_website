@@ -69,7 +69,7 @@ export function Hero() {
                 {/* Text content Ã¢â‚¬â€ bottom on mobile, left on desktop */}
                 <div className="order-1 flex flex-col items-center gap-6 text-center lg:col-span-6 lg:items-start lg:text-left">
                     <div
-                        className="flex w-full flex-col items-center gap-6 rounded-2xl border border-white/30 border-t-white/20 border-l-white/30 bg-gradient-to-br from-white/[15] via-white/[10] to-transparent p-6 text-center shadow-[0_30px_60px_-15px_rgba(0,0,0,0.6),inset_0_1px_1px_rgba(255,255,255,0.2)] backdrop-blur-2xl backdrop-saturate-100 sm:p-8 lg:items-start lg:p-10 lg:text-left"
+                        className="flex w-full flex-col items-center gap-6 rounded-2xl border border-white/30 border-t-white/20 border-l-white/30 bg-gradient-to-br from-white/[15] via-white/[10] to-transparent p-5 text-center shadow-[0_30px_60px_-15px_rgba(0,0,0,0.6),inset_0_1px_1px_rgba(255,255,255,0.2)] backdrop-blur-2xl backdrop-saturate-100 sm:p-6 lg:items-start lg:p-8 lg:text-left"
                     >
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}

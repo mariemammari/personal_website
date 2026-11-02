@@ -16,7 +16,7 @@ export function Skills() {
     const categories = t("skills.categories", { returnObjects: true }) as Record<SkillCategoryKey, { title: string; items: string[] }>;
 
     return (
-        <section id="skills" className="mx-auto w-11/12 max-w-[1600px] py-20 xl:w-10/12">
+        <section id="skills" className="mx-auto w-11/12 max-w-[1600px] py-16 md:py-20 xl:w-10/12">
             <div className="mb-10 max-w-2xl">
                 <p className="font-mono text-base font-bold uppercase tracking-[0.25em] text-[#39BEFF]">{t("skills.title")}</p>
                 <h2 className="mt-4 font-display text-4xl font-bold leading-tight text-white/80 md:text-5xl">{t("skills.heading")}</h2>
@@ -32,7 +32,7 @@ export function Skills() {
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ delay: index * 0.06, duration: 0.45 }}
                         viewport={{ once: true, amount: 0.2 }}
-                        className={`${heroGlassCard} p-6`}
+                        className={`${heroGlassCard} p-5`}
                     >
                         <h3 className="font-display text-2xl font-semibold text-secondary">{category.title}</h3>
                         <div className="mt-5 flex flex-wrap gap-3">

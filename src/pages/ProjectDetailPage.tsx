@@ -133,7 +133,7 @@ export function ProjectDetailPage() {
             <Navbar />
             <main className="relative z-10 mx-auto w-11/12 max-w-[1600px] pt-24 lg:h-screen lg:w-11/12 lg:overflow-hidden lg:pt-28 xl:w-11/12">
                 <div className="grid gap-6 pb-8 lg:h-full lg:min-h-0 lg:grid-cols-[minmax(0,0.82fr)_minmax(0,1.18fr)] lg:pb-6">
-                    <aside className={`${heroGlassPanelMain} flex flex-col gap-5 p-5 sm:p-7 lg:h-full lg:min-h-0 lg:overflow-y-hidden`}>
+                    <aside className={`${heroGlassPanelMain} flex flex-col gap-5 p-4 sm:p-6 lg:h-full lg:min-h-0 lg:overflow-y-hidden`}>
                         {project.year && (
                             <span className="w-fit rounded-full border border-white/20 bg-white/5 px-3 py-1 text-xs text-white/70">
                                 {project.year}
@@ -194,7 +194,7 @@ export function ProjectDetailPage() {
 
                     <div className="min-w-0 space-y-6 lg:h-full lg:min-h-0 lg:overflow-y-auto lg:overscroll-contain lg:pe-3 lg:pb-8 lg:[scrollbar-width:none] lg:[&::-webkit-scrollbar]:hidden">
                         <section>
-                            <div className={`${heroGlassPanel} p-6 sm:p-8`}>
+                            <div className={`${heroGlassPanel} p-5 sm:p-6`}>
                                 <SectionHeading icon={<Box className="h-5 w-5 text-secondary " />} label={t("projects.ui.projectDetails")} />
                                 <p className="text-base leading-7 ">
                                     {project.longDescription ?? project.description}
@@ -219,7 +219,7 @@ export function ProjectDetailPage() {
                 {hasGallery && project.gallery!.length > 1 && (
                     <section className="border-t border-white/10 py-14">
                         <div className="mx-auto w-12/12 max-w-[1600px] xl:w-12/12">
-                            <div className={`${heroGlassPanel} p-6 sm:p-8`}>
+                            <div className={`${heroGlassPanel} p-5 sm:p-6`}>
                             <SectionHeading icon={<Sparkles className="h-4 w-4" />} label={t("projects.ui.screenshots")} />
                             <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
                                 {project.gallery!.map((src, i) => (
@@ -243,7 +243,7 @@ export function ProjectDetailPage() {
                 {/* ── Tech Stack ── */}
                 <section className="border-t border-white/10 py-6">
                     <div className="mx-auto w-12/12 max-w-[1600px] xl:w-12/12">
-                        <div className={`${heroGlassPanel} p-6 sm:p-8`}>
+                        <div className={`${heroGlassPanel} p-5 sm:p-6`}>
                         <SectionHeading icon={<Box className="h-4 w-4" />} label={t("projects.ui.techStack")} />
 
                         <div className="space-y-8">
@@ -286,7 +286,7 @@ export function ProjectDetailPage() {
                 {project.features && project.features.length > 0 && (
                     <section className="border-t border-white/10 py-16">
                         <div className="mx-auto w-12/12 max-w-[1600px] xl:w-12/12">
-                            <div className={`${heroGlassPanel} p-6 sm:p-8`}>
+                            <div className={`${heroGlassPanel} p-5 sm:p-6`}>
                             <SectionHeading icon={<Sparkles className="h-4 w-4" />} label={t("projects.ui.keyFeatures")} />
                             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                                 {project.features.map((f, i) => (
@@ -310,7 +310,7 @@ export function ProjectDetailPage() {
                 {project.devops && (
                     <section className="border-t border-white/10 py-16">
                         <div className="mx-auto w-12/12 max-w-[1600px] xl:w-12/12">
-                            <div className={`${heroGlassPanel} p-6 sm:p-8`}>
+                            <div className={`${heroGlassPanel} p-5 sm:p-6`}>
                             <SectionHeading icon={<Server className="h-4 w-4" />} label={t("projects.ui.devopsInfrastructure")} />
 
                             <div className="grid gap-6 lg:grid-cols-[1fr_380px]">
@@ -337,7 +337,7 @@ export function ProjectDetailPage() {
                                 </div>
 
                                 {/* Tool badges */}
-                                <div className={`${heroGlassCard} p-6`}>
+                                <div className={`${heroGlassCard} p-5`}>
                                     <p className="mb-5 text-xs font-semibold uppercase tracking-widest text-primary/05">
                                         {t("projects.ui.infrastructureStack")}
                                     </p>
