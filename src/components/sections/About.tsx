@@ -45,7 +45,7 @@ export function About() {
 
     return (
         <section id="about" className="relative mx-auto w-11/12 max-w-[1600px] py-20 md:py-28 xl:w-10/12">
-            <p className="font-mono text-lg font-bold uppercase tracking-[0.25em] text-secondary">
+            <p className="font-mono text-sm font-bold uppercase tracking-[0.25em] text-secondary">
                 {t("about.title")}
             </p>
             <h2 className="mt-4 font-display text-4xl font-bold leading-tight text-white md:text-5xl">
@@ -66,7 +66,7 @@ export function About() {
                             <p>{paragraphs[0]}</p>
                             <p>{paragraphs[1]}</p>
                         </div>
-                        <blockquote className="mt-8 border-s-2 border-[var(--cyan)] ps-5 font-display text-2xl leading-relaxed text-white sm:text-3xl">
+                        <blockquote className="mt-8 border-s-2 border-[var(--cyan)] ps-5 font-display text-xl leading-relaxed text-white sm:text-2xl">
                             {t("about.quoteStart")}
                             <span className="bg-gradient-to-r from-[var(--cyan)] to-[var(--orchid)] bg-clip-text font-semibold text-transparent">
                                 {t("about.quoteHighlight")}
@@ -88,7 +88,7 @@ export function About() {
                         <span className="relative flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-white/20 bg-white/10">
                             <MapPin className="h-5 w-5 text-[var(--cyan)]" />
                         </span>
-                        <span className="relative text-lg font-semibold text-white sm:text-xl">
+                        <span className="relative text-base font-semibold text-white sm:text-lg">
                             {t("about.facts.based")}
                         </span>
                     </motion.article>
@@ -126,10 +126,10 @@ export function About() {
                                 index > 1 ? "border-t border-white/15 lg:border-t-0" : ""
                             } ${index > 0 ? "lg:border-s lg:border-white/15" : ""}`}
                         >
-                            <span className="font-display text-2xl font-bold leading-tight text-secondary lg:text-3xl">
+                            <span className="font-display text-xl font-bold leading-tight text-secondary lg:text-2xl">
                                 <CountUpValue value={stat.value} reducedMotion={reducedMotion} />
                             </span>
-                            <span className="mt-2 text-sm uppercase tracking-wider text-white">
+                            <span className="mt-2 text-xs uppercase tracking-wider text-white">
                                 {stat.label}
                             </span>
                         </div>

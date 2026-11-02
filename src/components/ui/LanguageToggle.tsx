@@ -39,9 +39,9 @@ export function LanguageToggle() {
             <button
                 type="button"
                 onClick={() => setOpen((value) => !value)}
-                className="glass inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm text-ink transition hover:border-secondary/80"
+                className="glass group inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm text-white transition hover:border-secondary/80 hover:text-secondary"
             >
-                <Globe className="h-4 w-4 text-primary hover:text-secondary " />
+                <Globe className="h-4 w-4 text-white transition group-hover:text-secondary" />
                 <span>{lang.toUpperCase()}</span>
                 <ChevronDown className={`h-4 w-4 transition ${open ? "rotate-180" : ""}`} />
             </button>

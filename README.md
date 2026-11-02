@@ -51,7 +51,7 @@ I earned my bachelor's degree in Computer Science with honors from ISSAT Sousse,
 - **DigiService** — A Spring Boot microservices platform using Eureka service discovery, centralized configuration, an API Gateway, Keycloak, and Docker Compose.<br>
   `Spring Boot` `Spring Cloud` `Eureka` `Keycloak` `Docker`
 
-- **Real Estate Price Predictor** — A machine-learning pipeline for Tunisian property prices, exposed through a FastAPI REST API.<br>
+- **Tunisian Real Estate Price Predictor** — A machine-learning pipeline for Tunisian property prices, exposed through a FastAPI REST API.<br>
   `Python` `XGBoost` `Scikit-learn` `Pandas` `FastAPI`
 
 - **InnoMall** — A smart mall-management platform with e-commerce, events, loyalty rewards, QR-based parking, notifications, and an AI assistant.<br>

@@ -89,7 +89,7 @@ export function Navbar() {
                             rel="noreferrer"
                             aria-label={t("hero.social.github")}
                             title={t("hero.social.github")}
-                            className="flex h-9 w-9 items-center justify-center rounded-full border border-white/25 bg-white/10 text-white/85 shadow-[inset_0_1px_0_rgba(255,255,255,0.2)] backdrop-blur-lg transition hover:-translate-y-0.5 hover:border-cyan-100/60 hover:bg-cyan-100/15 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-100"
+                            className="flex h-9 w-9 items-center justify-center rounded-full border border-white/25 bg-white/10 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.2)] backdrop-blur-lg transition hover:-translate-y-0.5 hover:border-secondary/60 hover:bg-secondary/15 hover:text-secondary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary"
                         >
                             <FaGithub className="h-4 w-4" />
                         </a>
@@ -99,7 +99,7 @@ export function Navbar() {
                             rel="noreferrer"
                             aria-label={t("hero.social.linkedin")}
                             title={t("hero.social.linkedin")}
-                            className="flex h-9 w-9 items-center justify-center rounded-full border border-white/25 bg-white/10 text-white/85 shadow-[inset_0_1px_0_rgba(255,255,255,0.2)] backdrop-blur-lg transition hover:-translate-y-0.5 hover:border-cyan-100/60 hover:bg-cyan-100/15 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-100"
+                            className="flex h-9 w-9 items-center justify-center rounded-full border border-white/25 bg-white/10 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.2)] backdrop-blur-lg transition hover:-translate-y-0.5 hover:border-secondary/60 hover:bg-secondary/15 hover:text-secondary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary"
                         >
                             <FaLinkedinIn className="h-4 w-4" />
                         </a>
@@ -110,7 +110,7 @@ export function Navbar() {
                         type="button"
                         onClick={openCommandPalette}
                         aria-label="Open command palette"
-                        className="glass hidden items-center gap-2 rounded-full px-3 py-1.5 text-sm font-semibold  transition text-primary hover:text-secondary hover:border-primary/40 md:flex"
+                        className="glass hidden items-center gap-2 rounded-full px-3 py-1.5 text-sm font-semibold text-white transition hover:text-secondary hover:border-secondary/40 md:flex"
                     >
                         <Search className="h-3 w-3" />
                         <span >Search</span>
@@ -129,7 +129,7 @@ export function Navbar() {
                         type="button"
                         onClick={openCommandPalette}
                         aria-label="Open command palette"
-                        className="glass flex h-10 w-10 items-center justify-center rounded-full text-ink transition hover:border-primary hover:text-primary md:hidden"
+                        className="glass flex h-10 w-10 items-center justify-center rounded-full text-white transition hover:border-secondary hover:text-secondary md:hidden"
                     >
                         <Search className="h-4 w-4" />
                     </button>
@@ -137,7 +137,7 @@ export function Navbar() {
                     {/* Mobile: hamburger */}
                     <button
                         type="button"
-                        className="glass flex h-10 w-10 items-center justify-center rounded-full text-ink transition hover:border-primary md:hidden"
+                        className="glass flex h-10 w-10 items-center justify-center rounded-full text-white transition hover:border-secondary hover:text-secondary md:hidden"
                         onClick={() => setOpen((value) => !value)}
                         aria-label="Toggle menu"
                     >

@@ -47,19 +47,19 @@ export function Hero() {
                         <button
                             type="button"
                             onClick={openEmailModal}
-                            className={`${glassBtn} bg-black/40 text-2xl font-semibold text-primary hover:bg-white/50 hover:text-primary`}
+                            className={`${glassBtn} bg-black/40 text-lg font-semibold text-primary hover:bg-white/50 hover:text-primary`}
                         >
-                            <Mail className=" h-8 w-8" />
+                            <Mail className="h-6 w-6" />
                             {t("hero.ctaContact")}
                         </button>
                         <a
                             href={t("hero.cvDownloadHref")}
                             target="_blank"
                             rel="noreferrer"
-                            className={`${glassBtn} text-2xl  border-[#8ee9ff]/90 bg-gradient-to-br from-[#8ee9ff]/60 via-[#6f8cff]/75 to-[#d58cff]/80 shadow-[inset_0_1px_0_rgba(255,255,255,0.65),0_12px_32px_rgba(20,20,90,0.35)] hover:brightness-110`}
+                            className={`${glassBtn} text-lg border-[#8ee9ff]/90 bg-gradient-to-br from-[#8ee9ff]/60 via-[#6f8cff]/75 to-[#d58cff]/80 shadow-[inset_0_1px_0_rgba(255,255,255,0.65),0_12px_32px_rgba(20,20,90,0.35)] hover:brightness-110`}
                         >
                             {glassGlare}
-                            <FileText className="  h-8 w-8" />
+                            <FileText className="h-6 w-6" />
                             {t("hero.ctaViewCv")}
                         </a>
 

@@ -58,6 +58,7 @@ export const projects: Project[] = [
         github: "https://github.com/mariemammari/VersLeVert",
         demo: "https://verslevert.onrender.com",
         image: `url(${versLeVert})`,
+        year: "2026",
         status: "live",
     },
     {
@@ -91,7 +92,7 @@ export const projects: Project[] = [
         role:
             "Led DevOps architecture — designed and implemented both Jenkins CI & CD pipelines, Kubernetes manifests (Deployments, Services, Secrets), Cloudflare DNS configuration, and Docker containerization for the backend. Built core NestJS backend modules: property, auth, rental, chat, finance, notifications, nearby search, and AI integration layer. Implemented real-time Socket.io chat, Stripe payment flow with PDF invoice generation, and Prometheus + Grafana monitoring.",
         team: 5,
-        year: "2025–2026",
+        year: "2026",
         github: "https://github.com/mariemammari",
         demo: "https://www.youtube.com/watch?v=z0v_b0Qgeng",
         image: "url(https://img.youtube.com/vi/z0v_b0Qgeng/hqdefault.jpg)",
@@ -101,7 +102,7 @@ export const projects: Project[] = [
     },
     {
         id: 2,
-        title: "Real Estate Price Predictor",
+        title: "Tunisian Real Estate Price Predictor",
         tagline: "End-to-End ML Pipeline for the Tunisian Real Estate Market",
         description:
             "An end-to-end machine learning pipeline targeting the Tunisian real estate market. Covers web scraping, data cleaning, feature engineering, a Two-Stage Mixture Model for sale prices, and an XGBoost regressor for rentals — exposed via a FastAPI REST API.",
@@ -123,7 +124,7 @@ export const projects: Project[] = [
         role:
             "Built the full ML pipeline end-to-end: web scrapers, data cleaning notebook, feature engineering, geographic tier clustering, model selection & hyperparameter tuning (XGBoost, RandomForest, Ridge), Two-Stage Mixture Model design for sale prices, and FastAPI wrapper + Dockerfile.",
         team: 1,
-        year: "2025–2026",
+        year: "2026",
         github: "https://github.com/mariemammari",
         image: `url(${priceEstimator})`,
         status: "live",
