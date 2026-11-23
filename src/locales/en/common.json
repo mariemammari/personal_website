@@ -93,8 +93,8 @@
   },
   "skills": {
     "title": "Skills",
-    "heading": "A focused stack for building and shipping.",
-    "subtitle": "Grouped by discipline and depth.",
+    "heading": "Technologies & Tools",
+    "subtitle": "Core technologies across full-stack engineering, DevOps, and applied ML.",
     "categories": {
       "frontend": {
         "title": "Frontend",
@@ -154,11 +154,11 @@
     "educationTitle": "Education",
     "now": "Now",
     "professional": [
-      "Hi, I'm Mariem. I take crafting applications personally — quality and attention to detail are what make a project truly worth building.",
+      "Hi, I'm Mariem. I build applications with care, treating quality and attention to detail as the baseline, not an afterthought.",
       "I earned my bachelor's degree in Computer Science with honors from ISSAT Sousse, and I'm now in the final year of my engineering cycle at ESPRIT, specializing in Web Technologies & Internet. My experience spans full-stack development, microservices, and containerized deployments with Docker and Kubernetes."
     ],
     "personal": [
-      "Hi, I'm Mariem. I take crafting applications personally — quality and attention to detail are what make a project truly worth building.",
+      "Hi, I'm Mariem. I build applications with care, treating quality and attention to detail as the baseline, not an afterthought.",
       "I earned my bachelor's degree in Computer Science with honors from ISSAT Sousse, and I'm now in the final year of my engineering cycle at ESPRIT, specializing in Web Technologies & Internet. My experience spans full-stack development, microservices, and containerized deployments with Docker and Kubernetes."
     ],
     "stats": [

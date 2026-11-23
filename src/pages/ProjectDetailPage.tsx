@@ -6,8 +6,9 @@ import {
     Package,
     GitBranch,
     Globe,
+    LayoutGrid,
+    Layers,
     Server,
-    Sparkles,
     Terminal,
 } from "lucide-react";
 import { FaGithub } from "react-icons/fa6";
@@ -28,12 +29,12 @@ const fadeUp = (delay = 0) => ({
 
 function SectionHeading({ icon, label }: { icon: React.ReactNode; label: string }) {
     return (
-        <div className="mb-8 flex items-center gap-3">
-            <span className="flex h-9 w-9 items-center justify-center rounded-xl border border-cyan-100/20 bg-cyan-100/10 text-cyan-100">
+        <div className="mb-6 flex items-center gap-3">
+            <span className="flex h-8 w-8 items-center justify-center rounded-xl border border-white/15 bg-white/8 text-white/80">
                 {icon}
             </span>
-            <h2 className="font-display text-2xl font-semibold tracking-wide text-secondary">{label}</h2>
-            <div className="ml-4 h-px flex-1 bg-white/15" />
+            <h2 className="font-sans text-sm font-semibold uppercase tracking-[0.18em] text-white/90">{label}</h2>
+            <div className="ml-4 h-px flex-1 bg-white/10" />
         </div>
     );
 }
@@ -52,25 +53,23 @@ function Tag({ children, accent = false }: { children: string; accent?: boolean 
 }
 
 function FeatureCard({ text }: { text: string }) {
-    /* split "🏡 Title — rest" or "🏡 Title: rest" into emoji+title / body */
-    const dashIdx = text.indexOf(" — ");
+    /* split "🏡 Title: rest" into title / body */
     const colonIdx = text.indexOf(": ");
-    const splitAt = dashIdx !== -1 ? dashIdx : colonIdx !== -1 ? colonIdx : -1;
 
     let heading = text;
     let body = "";
-    if (splitAt !== -1) {
-        heading = text.slice(0, splitAt);
-        body = text.slice(splitAt + (dashIdx !== -1 ? 3 : 2));
+    if (colonIdx !== -1) {
+        heading = text.slice(0, colonIdx);
+        body = text.slice(colonIdx + 2);
     }
 
     return (
-        <div className={`rounded-2xl bg-white/20 backdrop-blur-2xl transition duration-300  group p-5`}>
-            <div className="mb-2 flex items-start gap-2">
-                <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-cyan-100" />
-                <p className="text-sm font-semibold text-white">{heading}</p>
+        <div className={`rounded-2xl bg-white/20 backdrop-blur-2xl transition duration-300 group p-4`}>
+            <div className="mb-1.5 flex items-start gap-2">
+                <CheckCircle2 className="mt-0.5 h-3.5 w-3.5 shrink-0 text-cyan-100" />
+                <p className="text-xs font-semibold text-white">{heading}</p>
             </div>
-            {body && <p className="pl-6 text-xs leading-6 text-white/75">{body}</p>}
+            {body && <p className="pl-5 text-xs leading-5 text-white/75">{body}</p>}
         </div>
     );
 }
@@ -204,14 +203,7 @@ export function ProjectDetailPage() {
                                         {project.tags.map((tag) => <Tag key={tag}>{tag}</Tag>)}
                                     </div>
                                 )}
-                                {project.role && (
-                                    <div className={` mt-5 p-4 rounded-2xl bg-white/25 backdrop-blur-2xl transition duration-300 `}>
-                                        <p className="mb-1.5 text-sm font-bold uppercase tracking-widest text-white/80 ">
-                                            {t("projects.ui.myContribution")}
-                                        </p>
-                                        <p className="text-sm leading-6 text-white/90">{project.role}</p>
-                                    </div>
-                                )}
+
                             </div>
                         </section>
 
@@ -220,7 +212,7 @@ export function ProjectDetailPage() {
                     <section className="border-t border-white/10 py-14">
                         <div className="mx-auto w-12/12 max-w-[1600px] xl:w-12/12">
                             <div className={`${heroGlassPanel} p-5 sm:p-6`}>
-                            <SectionHeading icon={<Sparkles className="h-4 w-4" />} label={t("projects.ui.screenshots")} />
+                            <SectionHeading icon={<LayoutGrid className="h-4 w-4" />} label={t("projects.ui.screenshots")} />
                             <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
                                 {project.gallery!.map((src, i) => (
                                     <motion.img
@@ -287,7 +279,7 @@ export function ProjectDetailPage() {
                     <section className="border-t border-white/10 py-16">
                         <div className="mx-auto w-12/12 max-w-[1600px] xl:w-12/12">
                             <div className={`${heroGlassPanel} p-5 sm:p-6`}>
-                            <SectionHeading icon={<Sparkles className="h-4 w-4" />} label={t("projects.ui.keyFeatures")} />
+                            <SectionHeading icon={<Layers className="h-4 w-4" />} label={t("projects.ui.keyFeatures")} />
                             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                                 {project.features.map((f, i) => (
                                     <motion.div

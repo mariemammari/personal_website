@@ -1,38 +1,11 @@
-import { animate, motion, useInView, useMotionValue, useReducedMotion, useTransform } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { MapPin } from "lucide-react";
-import { useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 
-function CountUpValue({ value, reducedMotion }: { value: string; reducedMotion: boolean }) {
-    const ref = useRef<HTMLSpanElement>(null);
-    const inView = useInView(ref, { once: true, amount: 0.8 });
-    const count = useMotionValue(0);
-    const rounded = useTransform(count, (current) => Math.round(current).toString());
-    const match = value.match(/^([^0-9]*)(\d+)(.*)$/);
-
-    useEffect(() => {
-        if (!inView || reducedMotion || !match) return;
-        const controls = animate(count, Number(match[2]), { duration: 1.1, ease: "easeOut" });
-        return () => controls.stop();
-    }, [count, inView, match, reducedMotion]);
-
-    if (!match || reducedMotion) {
-        return <span ref={ref}>{value}</span>;
-    }
-
-    return (
-        <span ref={ref} aria-label={value}>
-            {match[1]}
-            <motion.span aria-hidden="true">{rounded}</motion.span>
-            {match[3]}
-        </span>
-    );
-}
 
 export function About() {
     const { t } = useTranslation();
     const paragraphs = t("about.professional", { returnObjects: true }) as string[];
-    const stats = t("about.stats", { returnObjects: true }) as { value: string; label: string }[];
     const reducedMotion = useReducedMotion() ?? false;
     const reveal = (index: number) => ({
         initial: reducedMotion ? false : { opacity: 0, y: 24 },
@@ -44,11 +17,11 @@ export function About() {
     });
 
     return (
-        <section id="about" className="relative mx-auto w-11/12 max-w-[1600px] py-16 md:py-20 xl:w-10/12">
-            <p className="font-mono text-sm font-bold uppercase tracking-[0.25em] text-secondary">
+        <section id="about" className="relative mx-auto w-11/12 max-w-[1600px] py-14 md:py-18 xl:w-10/12">
+            <p className="font-mono text-xs font-bold uppercase tracking-[0.28em] text-secondary">
                 {t("about.title")}
             </p>
-            <h2 className="mt-4 font-display text-4xl font-bold leading-tight text-white md:text-5xl">
+            <h2 className="mt-3 font-display text-3xl font-bold leading-tight text-white md:text-4xl">
                 {t("about.heading")}
             </h2>
 
@@ -62,11 +35,11 @@ export function About() {
                         className="pointer-events-none absolute -bottom-16 -end-12 h-48 w-48 rounded-tl-full bg-[var(--cyan)]/15"
                     />
                     <div className="relative z-10">
-                        <div className="space-y-4 text-base leading-8 text-white">
+                        <div className="space-y-4 text-sm leading-7 text-white">
                             <p>{paragraphs[0]}</p>
                             <p>{paragraphs[1]}</p>
                         </div>
-                        <blockquote className="mt-8 border-s-2 border-[var(--cyan)] ps-5 font-display text-xl leading-relaxed text-white sm:text-2xl">
+                        <blockquote className="mt-6 border-s-2 border-[var(--cyan)] ps-5 font-display text-lg leading-relaxed text-white sm:text-xl">
                             {t("about.quoteStart")}
                             <span className="bg-gradient-to-r from-[var(--cyan)] to-[var(--orchid)] bg-clip-text font-semibold text-transparent">
                                 {t("about.quoteHighlight")}
@@ -113,31 +86,9 @@ export function About() {
                     </motion.article>
                 </div>
 
-                <motion.div
-                    {...reveal(3)}
-                    className="glass grid grid-cols-2 overflow-hidden rounded-3xl p-2 sm:p-4 lg:col-span-12 lg:grid-cols-4"
-                >
-                    {stats.map((stat, index) => (
-                        <div
-                            key={stat.label}
-                            className={`relative flex min-h-28 flex-col justify-center gap-1 px-3 py-3 text-center sm:px-4 ${
-                                index % 2 === 1 ? "border-s border-white/15" : ""
-                            } ${
-                                index > 1 ? "border-t border-white/15 lg:border-t-0" : ""
-                            } ${index > 0 ? "lg:border-s lg:border-white/15" : ""}`}
-                        >
-                            <span className="font-display text-xl font-bold leading-tight text-secondary lg:text-2xl">
-                                <CountUpValue value={stat.value} reducedMotion={reducedMotion} />
-                            </span>
-                            <span className="mt-2 text-xs uppercase tracking-wider text-white">
-                                {stat.label}
-                            </span>
-                        </div>
-                    ))}
-                </motion.div>
 
                 <motion.article
-                    {...reveal(4)}
+                    {...reveal(3)}
                     className="glass rounded-3xl p-5 sm:p-6 lg:col-span-12"
                 >
                     <h3 className="mb-7 font-mono text-xs font-semibold uppercase tracking-[0.2em] text-white">

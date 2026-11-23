@@ -98,7 +98,7 @@ export function ProjectCard({ project, index, onOpen }: { project: Project; inde
             aria-label={canOpen ? t("projects.ui.viewDetailsFor", { title: project.title }) : undefined}
         >
             <div
-                className="relative mb-6 h-64 shrink-0 overflow-hidden rounded-2xl border border-white/20 md:h-[340px]"
+                className="relative mb-5 h-52 shrink-0 overflow-hidden rounded-2xl border border-white/15 md:h-72"
                 onPointerDown={handlePointerDown}
                 onPointerUp={handlePointerUp}
                 onPointerCancel={handlePointerLeave}
@@ -152,20 +152,25 @@ export function ProjectCard({ project, index, onOpen }: { project: Project; inde
             ) : null}
             <div className="mb-3 flex items-start justify-between gap-3">
                 <div className="min-w-0">
-                    <h3 className="font-display text-2xl font-semibold text-white">{project.title}</h3>
+                    <h3 className="font-display text-xl font-semibold text-white">{project.title}</h3>
                     {project.tagline && (
-                        <p className="mt-1 line-clamp-1 text-sm text-white/70">{project.tagline}</p>
+                        <p className="mt-1 line-clamp-2 text-sm leading-5 text-white/65">{project.tagline}</p>
                     )}
                 </div>
                 <StatusBadge status={project.status} />
             </div>
-            <p className="text-sm leading-6 text-white/80">{project.description}</p>
-            <div className="mt-4 flex flex-wrap gap-2">
-                {project.tags.map((tag) => (
-                    <span key={tag} className="rounded-full border border-cyan-100/20 bg-cyan-100/10 px-3 py-1 font-mono text-xs text-cyan-50">
+            {/* Tags — first 6 only */}
+            <div className="mt-3 flex flex-wrap gap-1.5">
+                {project.tags.slice(0, 6).map((tag) => (
+                    <span key={tag} className="rounded-full border border-cyan-100/18 bg-cyan-100/8 px-2.5 py-0.5 font-mono text-[11px] text-cyan-100/80">
                         {tag}
                     </span>
                 ))}
+                {project.tags.length > 6 && (
+                    <span className="rounded-full border border-white/12 bg-white/5 px-2.5 py-0.5 font-mono text-[11px] text-white/40">
+                        +{project.tags.length - 6}
+                    </span>
+                )}
             </div>
             {project.year ? (
                 <div className="mt-4 flex items-center gap-3">

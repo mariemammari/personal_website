@@ -17,9 +17,9 @@ export function Projects() {
     return (
         <section id="projects" className="mx-auto w-11/12 max-w-[1600px] py-16 md:py-20 xl:w-10/12">
             <div className="mb-8 max-w-2xl">
-                <p className="font-mono text-base font-bold uppercase tracking-[0.25em] text-secondary">{t("projects.title")}</p>
-                <h2 className="mt-4 font-display text-4xl font-bold leading-tight text-white md:text-5xl">{t("projects.heading")}</h2>
-                <p className="mt-4 text-base leading-8 text-white/80">{t("projects.subtitle")}</p>
+                <p className="font-mono text-xs font-bold uppercase tracking-[0.28em] text-secondary">{t("projects.title")}</p>
+                <h2 className="mt-3 font-display text-3xl font-bold leading-tight text-white md:text-4xl">{t("projects.heading")}</h2>
+                <p className="mt-3 text-sm leading-6 text-white/70">{t("projects.subtitle")}</p>
             </div>
             <div className="grid gap-6 xl:auto-rows-fr xl:grid-cols-2">
                 {orderedProjects.map((project, index) => {

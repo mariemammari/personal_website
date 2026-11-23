@@ -1,10 +1,11 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { Menu, X, Search } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa6";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useLocation, useNavigate } from "react-router-dom";
 import { LanguageToggle } from "../ui/LanguageToggle";
+import meImage from "../../assets/me1.png";
 
 type NavLink = {
     key: string;
@@ -23,13 +24,10 @@ function scrollToSection(id: string) {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
-function openCommandPalette() {
-    window.dispatchEvent(new KeyboardEvent("keydown", { key: "k", ctrlKey: true, bubbles: true }));
-}
-
 export function Navbar() {
     const { t } = useTranslation();
     const [open, setOpen] = useState(false);
+    const [scrolled, setScrolled] = useState(false);
     const location = useLocation();
     const navigate = useNavigate();
     const lang = location.pathname.split("/")[1] === "fr" ? "fr" : "en";
@@ -38,8 +36,14 @@ export function Navbar() {
         setOpen(false);
     }, [location.pathname]);
 
+    // Track scroll — avatar appears after scrolling past the hero (~500px)
+    useEffect(() => {
+        const onScroll = () => setScrolled(window.scrollY > 480);
+        window.addEventListener("scroll", onScroll, { passive: true });
+        return () => window.removeEventListener("scroll", onScroll);
+    }, []);
+
     const links = baseLinks;
-    const navClass = "glass";
     const handleSectionClick = (id: string) => {
         if (document.getElementById(id)) {
             scrollToSection(id);
@@ -50,29 +54,52 @@ export function Navbar() {
 
     return (
         <motion.header
-            className={`fixed inset-x-0 top-4 z-50 mx-4 rounded-full transition-colors duration-300 md:mx-8 ${navClass}`}
+            className="glass fixed inset-x-0 top-3 z-50 mx-auto max-w-4xl rounded-full transition-colors duration-300 px-2"
             initial={false}
             animate={{ y: 0 }}
         >
-            <div className="mx-auto flex w-11/12 max-w-[1600px] items-center justify-between gap-4 py-3.5 xl:w-10/12">
-                {/* Logo */}
+            <div className="mx-auto flex items-center justify-between gap-3 py-2.5 px-4">
+                {/* Logo — with scroll-in avatar */}
                 <button
                     type="button"
                     onClick={() => handleSectionClick("hero")}
-                    className="flex items-baseline gap-1 text-xl font-semibold tracking-tight text-white"
+                    className="flex items-center gap-2 text-sm font-semibold tracking-tight text-white"
                 >
-                    <span>Mariem Ammari</span>
-                    <span className="text-primary">.</span>
+                    {/* Mini avatar — fades in after scroll */}
+                    <AnimatePresence>
+                        {scrolled && (
+                            <motion.div
+                                key="nav-avatar"
+                                initial={{ opacity: 0, scale: 0.5, width: 0, marginRight: 0 }}
+                                animate={{ opacity: 1, scale: 1, width: 28, marginRight: 4 }}
+                                exit={{ opacity: 0, scale: 0.5, width: 0, marginRight: 0 }}
+                                transition={{ duration: 0.3, ease: "easeOut" }}
+                                className="shrink-0 overflow-hidden rounded-full border border-secondary/50 shadow-[0_0_10px_rgba(137,231,248,0.30)]"
+                                style={{ height: 28 }}
+                            >
+                                <img
+                                    src={meImage}
+                                    alt="Mariem Ammari"
+                                    className="h-full w-full object-cover object-center"
+                                />
+                            </motion.div>
+                        )}
+                    </AnimatePresence>
+
+                    <span className="flex items-baseline gap-0.5">
+                        <span>Mariem Ammari</span>
+                        <span className="text-secondary">.</span>
+                    </span>
                 </button>
 
                 {/* Desktop nav links */}
-                <nav className="hidden items-center gap-8 md:flex">
+                <nav className="hidden items-center gap-6 md:flex">
                     {links.map((item) => (
                         <button
                             key={item.id}
                             type="button"
                             onClick={() => handleSectionClick(item.id)}
-                            className="relative text-base font-semibold text-white transition hover:text-secondary after:absolute after:-bottom-2 after:left-0 after:h-px after:w-0 after:bg-primary after:transition-all hover:after:w-full"
+                            className="relative text-xs font-medium tracking-widest uppercase text-white/80 transition hover:text-white after:absolute after:-bottom-1.5 after:left-0 after:h-px after:w-0 after:bg-secondary after:transition-all hover:after:w-full"
                         >
                             {t(`nav.${item.key}`)}
                         </button>
@@ -82,16 +109,16 @@ export function Navbar() {
                 {/* Right-side controls */}
                 <div className="flex items-center gap-2">
                     {/* Social links — desktop */}
-                    <div className="hidden items-center gap-2 md:flex">
+                    <div className="hidden items-center gap-1.5 md:flex">
                         <a
                             href="https://github.com/mariemammari"
                             target="_blank"
                             rel="noreferrer"
                             aria-label={t("hero.social.github")}
                             title={t("hero.social.github")}
-                            className="flex h-9 w-9 items-center justify-center rounded-full border border-white/25 bg-white/10 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.2)] backdrop-blur-lg transition hover:-translate-y-0.5 hover:border-secondary/60 hover:bg-secondary/15 hover:text-secondary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary"
+                            className="flex h-7 w-7 items-center justify-center rounded-full border border-white/20 bg-white/8 text-white/70 shadow-[inset_0_1px_0_rgba(255,255,255,0.15)] transition hover:-translate-y-0.5 hover:border-secondary/50 hover:bg-secondary/10 hover:text-secondary"
                         >
-                            <FaGithub className="h-4 w-4" />
+                            <FaGithub className="h-3.5 w-3.5" />
                         </a>
                         <a
                             href="https://linkedin.com/in/mariem-ammari-0226833a7/"
@@ -99,49 +126,25 @@ export function Navbar() {
                             rel="noreferrer"
                             aria-label={t("hero.social.linkedin")}
                             title={t("hero.social.linkedin")}
-                            className="flex h-9 w-9 items-center justify-center rounded-full border border-white/25 bg-white/10 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.2)] backdrop-blur-lg transition hover:-translate-y-0.5 hover:border-secondary/60 hover:bg-secondary/15 hover:text-secondary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary"
+                            className="flex h-7 w-7 items-center justify-center rounded-full border border-white/20 bg-white/8 text-white/70 shadow-[inset_0_1px_0_rgba(255,255,255,0.15)] transition hover:-translate-y-0.5 hover:border-secondary/50 hover:bg-secondary/10 hover:text-secondary"
                         >
-                            <FaLinkedinIn className="h-4 w-4" />
+                            <FaLinkedinIn className="h-3.5 w-3.5" />
                         </a>
                     </div>
-
-                    {/* ⌘K Search pill — desktop */}
-                    <button
-                        type="button"
-                        onClick={openCommandPalette}
-                        aria-label="Open command palette"
-                        className="glass hidden items-center gap-2 rounded-full px-3 py-1.5 text-sm font-semibold text-white transition hover:text-secondary hover:border-secondary/40 md:flex"
-                    >
-                        <Search className="h-3 w-3" />
-                        <span >Search</span>
-                        <kbd className="ml-1 rounded border border-primary/15 bg-primary/5 px-1 py-0.5 font-mono text-[10px] tracking-wide">
-                            ⌘K
-                        </kbd>
-                    </button>
 
                     {/* Language toggle — desktop */}
                     <div className="hidden items-center gap-2 lg:flex">
                         <LanguageToggle />
                     </div>
 
-                    {/* Mobile: search icon button */}
-                    <button
-                        type="button"
-                        onClick={openCommandPalette}
-                        aria-label="Open command palette"
-                        className="glass flex h-10 w-10 items-center justify-center rounded-full text-white transition hover:border-secondary hover:text-secondary md:hidden"
-                    >
-                        <Search className="h-4 w-4" />
-                    </button>
-
                     {/* Mobile: hamburger */}
                     <button
                         type="button"
-                        className="glass flex h-10 w-10 items-center justify-center rounded-full text-white transition hover:border-secondary hover:text-secondary md:hidden"
+                        className="glass flex h-8 w-8 items-center justify-center rounded-full text-white transition hover:border-secondary hover:text-secondary md:hidden"
                         onClick={() => setOpen((value) => !value)}
                         aria-label="Toggle menu"
                     >
-                        {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+                        {open ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
                     </button>
                 </div>
             </div>

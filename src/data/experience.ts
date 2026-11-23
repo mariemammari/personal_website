@@ -55,7 +55,7 @@ export const experience: ExperienceItem[] = [
         date: "2022 – Present",
         bullets: [
             "Responsibilities: requirements gathering, wireframing, Figma prototyping, brand identity design, client alignment through delivery.",
-            "Notable: Tunisian Labor Laws digital platform — UX research (benchmarking international solutions), information architecture, UX flows, full UI design.",
+            "Notable: Tunisian Labor Laws digital platform. UX research (benchmarking international solutions), information architecture, UX flows, full UI design.",
         ],
         tags: ["Figma", "UX Research", "Wireframing", "Prototyping", "Brand Identity"],
     },
